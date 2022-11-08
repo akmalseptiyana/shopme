@@ -1,7 +1,7 @@
 import { GlobalHeader } from "./global-header";
 import { Navigation } from "./navigation";
 
-export default function Layout({ children }) {
+export function Layout({ children }) {
   return (
     <>
       <GlobalHeader />

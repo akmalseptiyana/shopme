@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 import { links } from "../../constans/navigation-data";
+import { Container } from "../ui/container";
 
 function NavigationLinks({ isMobileOpen }) {
   if (isMobileOpen) {
@@ -49,7 +50,7 @@ export function Navigation() {
 
   return (
     <nav className="h-10 flex items-center my-5">
-      <div className="container flex items-center">
+      <Container className="flex items-center">
         <div className="flex flex-1 items-center gap-x-4 xl:gap-x-20">
           <h1 className="text-3xl text-[#0D0E43] josefin-bold">Shopme</h1>
           <NavigationLinks />
@@ -82,7 +83,7 @@ export function Navigation() {
             <Bars3Icon className="w-6 h-6 text-[#0D0E43]" />
           </button>
         </div>
-      </div>
+      </Container>
 
       <div
         className={clsx(
