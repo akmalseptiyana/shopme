@@ -44,7 +44,8 @@ function NavigationLinks({ isMobileOpen }) {
 }
 
 export default function Navigation() {
-  const [isMobileOpen, setMobileOpen] = useState(true);
+  const [isMobileOpen, setMobileOpen] = useState(false);
+  const [isSearchOpen, setSearchOpen] = useState(false);
 
   return (
     <nav className="h-10 flex items-center my-5">
@@ -55,9 +56,13 @@ export default function Navigation() {
         </div>
 
         <form className="hidden md:block mr-4">
+          <label htmlFor="search-field" className="sr-only">
+            Search...
+          </label>
           <div className="flex items-center">
             <input
               type="text"
+              id="search-field"
               className="h-10 w-[266px] border-2 border-[#E7E6EF outline-none"
             />
             <button type="submit" className="bg-pink-primary py-2 px-3">
@@ -67,7 +72,10 @@ export default function Navigation() {
         </form>
 
         <div className="flex items-center gap-x-5">
-          <button className="md:hidden">
+          <button
+            className="md:hidden"
+            onClick={() => setSearchOpen(!isSearchOpen)}
+          >
             <MagnifyingGlassIcon className="w-6 h-6 text-[#0D0E43]" />
           </button>
           <button className="lg:hidden" onClick={() => setMobileOpen(true)}>
@@ -87,6 +95,27 @@ export default function Navigation() {
         </button>
         <NavigationLinks isMobileOpen={isMobileOpen} />
       </div>
+
+      <form
+        className={clsx(
+          "fixed left-0 right-0 transition-all ease-in-out duration-200 md:hidden",
+          isSearchOpen ? "top-0" : "-top-full"
+        )}
+      >
+        <label htmlFor="search-field" className="sr-only">
+          Search...
+        </label>
+        <div className="flex items-center">
+          <input
+            type="text"
+            id="search-field"
+            className="h-10 w-full border-2 border-[#E7E6EF outline-none"
+          />
+          <button type="submit" className="bg-pink-primary py-2 px-3">
+            <MagnifyingGlassIcon className="w-6 h-6 text-white" />
+          </button>
+        </div>
+      </form>
     </nav>
   );
 }
