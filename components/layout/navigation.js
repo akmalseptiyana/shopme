@@ -63,7 +63,7 @@ export default function Navigation() {
             <input
               type="text"
               id="search-field"
-              className="h-10 w-[266px] border-2 border-[#E7E6EF outline-none"
+              className="h-10 w-[266px] border-2 border-r-0 border-[#E7E6EF outline-none"
             />
             <button type="submit" className="bg-pink-primary py-2 px-3">
               <MagnifyingGlassIcon className="w-6 h-6 text-white" />
@@ -109,7 +109,7 @@ export default function Navigation() {
           <input
             type="text"
             id="search-field"
-            className="h-10 w-full border-2 border-[#E7E6EF outline-none"
+            className="h-10 w-full border-2 border-r-0 border-[#E7E6EF outline-none"
           />
           <button type="submit" className="bg-pink-primary py-2 px-3">
             <MagnifyingGlassIcon className="w-6 h-6 text-white" />
