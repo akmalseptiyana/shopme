@@ -1,7 +1,7 @@
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { dataLeft, dataRight } from "../../constans/header-data";
 
-export default function GlobalHeader() {
+export function GlobalHeader() {
   return (
     <header className="bg-purple-primary py-[14px]">
       <div className="container flex flex-wrap items-center justify-center md:justify-between gap-y-4">

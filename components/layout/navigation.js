@@ -43,7 +43,7 @@ function NavigationLinks({ isMobileOpen }) {
   );
 }
 
-export default function Navigation() {
+export function Navigation() {
   const [isMobileOpen, setMobileOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
 
