@@ -86,7 +86,7 @@ export default function Navigation() {
 
       <div
         className={clsx(
-          "w-[280px] h-screen bg-[#F6F5FF] fixed top-0 transition-all ease-in-out duration-300 lg:hidden",
+          "w-[280px] h-screen bg-[#F6F5FF] fixed top-0 transition-all ease-in-out duration-300 z-50 lg:hidden",
           isMobileOpen ? "right-0" : "-right-full"
         )}
       >
@@ -98,7 +98,7 @@ export default function Navigation() {
 
       <form
         className={clsx(
-          "fixed left-0 right-0 transition-all ease-in-out duration-200 md:hidden",
+          "fixed left-0 right-0 transition-all ease-in-out duration-200 z-20 md:hidden",
           isSearchOpen ? "top-0" : "-top-full"
         )}
       >
