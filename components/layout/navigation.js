@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import clsx from "clsx";
 import {
   MagnifyingGlassIcon,
   Bars3Icon,
@@ -76,9 +77,10 @@ export default function Navigation() {
       </div>
 
       <div
-        className={`w-[280px] h-screen bg-[#F6F5FF] fixed top-0 ${
+        className={clsx(
+          "w-[280px] h-screen bg-[#F6F5FF] fixed top-0 transition-all ease-in-out duration-300 lg:hidden",
           isMobileOpen ? "right-0" : "-right-full"
-        } transition-all ease-in-out duration-300 lg:hidden`}
+        )}
       >
         <button onClick={() => setMobileOpen(false)}>
           <XMarkIcon className="w-6 h-6 text-[#0D0E43] absolute top-5 right-5" />
