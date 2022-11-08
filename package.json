@@ -1,5 +1,5 @@
 {
-  "name": "nextjs",
+  "name": "shopme",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.13",
     "cross-fetch": "^3.1.5",
     "next": "12.3.1",
     "react": "18.2.0",
