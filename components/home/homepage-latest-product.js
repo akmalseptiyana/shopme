@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import { HomepageSection } from "./homepage-section";
 import { discount } from "../../constans/discount";

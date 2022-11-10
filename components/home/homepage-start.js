@@ -1,7 +1,6 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import { HomepageSection } from "./homepage-section";
-import { Container } from "../ui/container";
 import { PrimaryButton } from "../ui/button/primary-button";
 
 export function HomePageStart() {
