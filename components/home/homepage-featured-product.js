@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { HomepageSection } from "./homepage-section";
 
@@ -14,9 +14,11 @@ export function HomePageFeaturedProduct({ featuredProducts }) {
                   <Image
                     src={product.image}
                     alt={product.title}
-                    layout="fill"
-                    objectFit="contain"
-                  />
+                    fill
+                    sizes="100vw"
+                    style={{
+                      objectFit: "contain"
+                    }} />
                 </figure>
               </div>
               <div className="mt-4 text-center w-[270px] py-4 px-4">

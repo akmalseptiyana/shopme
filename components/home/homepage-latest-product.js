@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { HomepageSection } from "./homepage-section";
 import { discount } from "../../constans/discount";
@@ -15,10 +15,12 @@ export function HomePageLatestProduct({ latestProducts }) {
                   <Image
                     src={product.image}
                     alt={product.title}
-                    layout="fill"
-                    objectFit="contain"
                     quality={90}
-                  />
+                    fill
+                    sizes="100vw"
+                    style={{
+                      objectFit: "contain"
+                    }} />
                 </figure>
               </div>
               <div className="flex items-center justify-between space-x-4 mt-4 w-[360px]">

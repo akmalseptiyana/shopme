@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { HomepageSection } from "./homepage-section";
 import { PrimaryButton } from "../ui/button/primary-button";
@@ -29,11 +29,13 @@ export function HomePageStart() {
           <Image
             src="/images/phone-promotional.png"
             alt="phone promo"
-            layout="fill"
-            objectFit="contain"
             quality={90}
             priority
-          />
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "contain"
+            }} />
         </div>
       </div>
     </HomepageSection>
