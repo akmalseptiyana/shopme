@@ -16,11 +16,12 @@ function NavigationLinks({ isMobileOpen }) {
       <ul className="flex flex-col gap-y-5 mt-16">
         {links.map((link, index) => (
           <li key={index} className="px-4">
-            <Link href={link.href}>
-              <a className="flex items-center gap-x-1 text-base text-[#0D0E43] lato-regular">
-                {link.name}
-                {link.icon && <link.icon className="w-3 h-3 text-[#0D0E43]" />}
-              </a>
+            <Link
+              href={link.href}
+              className="flex items-center gap-x-1 text-base text-[#0D0E43] lato-regular"
+            >
+              {link.name}
+              {link.icon && <link.icon className="w-3 h-3 text-[#0D0E43]" />}
             </Link>
           </li>
         ))}
@@ -32,11 +33,12 @@ function NavigationLinks({ isMobileOpen }) {
     <ul className="hidden lg:flex items-center gap-x-9">
       {links.map((link, index) => (
         <li key={index}>
-          <Link href={link.href}>
-            <a className="flex items-center gap-x-1 text-base text-[#0D0E43] lato-regular">
-              {link.name}
-              {link.icon && <link.icon className="w-3 h-3 text-[#0D0E43]" />}
-            </a>
+          <Link
+            href={link.href}
+            className="flex items-center gap-x-1 text-base text-[#0D0E43] lato-regular"
+          >
+            {link.name}
+            {link.icon && <link.icon className="w-3 h-3 text-[#0D0E43]" />}
           </Link>
         </li>
       ))}
@@ -56,7 +58,7 @@ export function Navigation() {
           <NavigationLinks />
         </div>
 
-        <form className="hidden md:block mr-4">
+        <form className="hidden md:block mr-4 lg:mr-0">
           <label htmlFor="search-field" className="sr-only">
             Search...
           </label>

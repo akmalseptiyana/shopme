@@ -6,7 +6,7 @@ export function Layout({ children }) {
     <>
       <GlobalHeader />
       <Navigation />
-      <main>{children}</main>
+      <main className="bg-white">{children}</main>
     </>
   );
 }
