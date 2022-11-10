@@ -17,8 +17,9 @@ export function HomePageFeaturedProduct({ featuredProducts }) {
                     fill
                     sizes="100vw"
                     style={{
-                      objectFit: "contain"
-                    }} />
+                      objectFit: "contain",
+                    }}
+                  />
                 </figure>
               </div>
               <div className="mt-4 text-center w-[270px] py-4 px-4">

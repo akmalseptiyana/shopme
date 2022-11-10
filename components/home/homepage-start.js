@@ -19,7 +19,7 @@ export function HomePageStart() {
             est adipiscing in phasellus non in justo.
           </p>
           <PrimaryButton
-            className="py-4 px-10 bg-pink-primary text-base text-white josefin-semibold rounded-sm mt-7"
+            className="py-4 px-10 josefin-semibold mt-7"
             type="button"
           >
             Shop Now
@@ -34,8 +34,9 @@ export function HomePageStart() {
             fill
             sizes="100vw"
             style={{
-              objectFit: "contain"
-            }} />
+              objectFit: "contain",
+            }}
+          />
         </div>
       </div>
     </HomepageSection>

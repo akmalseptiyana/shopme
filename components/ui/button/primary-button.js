@@ -8,7 +8,13 @@ export function PrimaryButton({
   children,
 }) {
   return (
-    <button className={clsx("leading-none", className)} type={type}>
+    <button
+      className={clsx(
+        "leading-none bg-pink-primary text-base text-white rounded-sm",
+        className
+      )}
+      type={type}
+    >
       {children}
     </button>
   );
