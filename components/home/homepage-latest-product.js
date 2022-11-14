@@ -10,19 +10,17 @@ export function HomePageLatestProduct({ latestProducts }) {
         {latestProducts?.map((product, index) => {
           return (
             <div key={product.id} className="max-w-[360px]">
-              <div className="w-[360px] h-[269px] bg-white">
-                <figure className="relative w-[360px] h-[269px]">
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    quality={90}
-                    fill
-                    sizes="100vw"
-                    style={{
-                      objectFit: "contain"
-                    }} />
-                </figure>
-              </div>
+              <figure className="relative w-[360px] h-[269px] bg-white">
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{
+                    objectFit: "contain",
+                  }}
+                />
+              </figure>
               <div className="flex items-center justify-between space-x-4 mt-4 w-[360px]">
                 <h3
                   className="text-base text-navy-blue josefin-regular truncate"
@@ -30,7 +28,7 @@ export function HomePageLatestProduct({ latestProducts }) {
                 >
                   {product.title}
                 </h3>
-                <div className="flex items-center space-x-2">
+                <div className="flex flex-wrap items-center space-x-2">
                   <h4 className="text-sm text-navy-blue josefin-regular">
                     ${product.price}
                   </h4>

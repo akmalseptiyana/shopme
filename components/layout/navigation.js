@@ -87,6 +87,7 @@ export function Navigation() {
         </div>
       </Container>
 
+      {/* mobile */}
       <div
         className={clsx(
           "w-[280px] h-screen bg-[#F6F5FF] fixed top-0 transition-all ease-in-out duration-300 z-50 lg:hidden",

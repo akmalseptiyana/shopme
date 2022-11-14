@@ -1,4 +1,5 @@
 import Image from "next/image";
+import smartwatch from "../../public/images/smartwatch.png";
 
 import { PrimaryButton } from "../ui/button/primary-button";
 import { HomepageSection } from "./homepage-section";
@@ -7,18 +8,8 @@ export function HomePageUnique() {
   return (
     <HomepageSection className="mt-36 bg-[#F1F0FF] pb-9">
       <div className="flex flex-wrap items-center justify-center gap-x-10">
-        <figure className="relative w-[515px] h-[605px]">
-          <Image
-            src="/images/smartwatch.png"
-            alt="phone promo"
-            quality={90}
-            priority
-            fill
-            sizes="100vw"
-            style={{
-              objectFit: "contain",
-            }}
-          />
+        <figure>
+          <Image src={smartwatch} alt="phone promo" quality={90} />
         </figure>
         <div className="max-w-[507px]">
           <h2 className="text-3xl md:text-4xl text-navy-blue josefin-bold">

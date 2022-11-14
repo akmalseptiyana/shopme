@@ -8,11 +8,17 @@ import { HomePageLatestProduct } from "../components/home/homepage-latest-produc
 import { HomePageOffer } from "../components/home/homepage-offer";
 import { HomePageUnique } from "../components/home/homepage-unique";
 import { HomePageTrendingProducts } from "../components/home/homepage-trending-product";
+import { HomePageDiscount } from "../components/home/homepage-discount";
+import { HomePageCategories } from "../components/home/homepage-categories";
+import { HomePageNewslater } from "../components/home/homepage-newslater";
+import { Sponsor } from "../components/sponsor";
+import { HomePageLeatestBlog } from "../components/home/homepage-leatest-blog";
 
 export default function Home({
   featuredProducts,
   latestProducts,
   trendingProducts,
+  topCategories,
 }) {
   return (
     <Page>
@@ -23,6 +29,11 @@ export default function Home({
         <HomePageOffer />
         <HomePageUnique />
         <HomePageTrendingProducts trendingProducts={trendingProducts} />
+        <HomePageDiscount />
+        <HomePageCategories topCategories={topCategories} />
+        <HomePageNewslater />
+        <Sponsor />
+        <HomePageLeatestBlog />
       </HomePageContent>
     </Page>
   );
@@ -42,7 +53,17 @@ export async function getServerSideProps() {
   const resTrendingProducts = await fetch(`${process.env.BASE_URL}/products`);
   const trendingProducts = await resTrendingProducts.json();
 
+  const resTopCategories = await fetch(
+    `${process.env.BASE_URL}/products/category/electronics`
+  );
+  const topCategories = await resTopCategories.json();
+
   return {
-    props: { featuredProducts, latestProducts, trendingProducts },
+    props: {
+      featuredProducts,
+      latestProducts,
+      trendingProducts,
+      topCategories,
+    },
   };
 }

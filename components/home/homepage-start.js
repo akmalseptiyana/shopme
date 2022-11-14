@@ -1,4 +1,5 @@
 import Image from "next/image";
+import phonePromo from "../../public/images/phone-promotional.png";
 
 import { HomepageSection } from "./homepage-section";
 import { PrimaryButton } from "../ui/button/primary-button";
@@ -6,7 +7,7 @@ import { PrimaryButton } from "../ui/button/primary-button";
 export function HomePageStart() {
   return (
     <HomepageSection className="bg-[#F2F0FF] py-10">
-      <div className="flex flex-wrap items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-y-20">
         <div>
           <p className="text-base text-pink-primary lato-bold">
             Best Furniture For Your Castle...
@@ -25,19 +26,9 @@ export function HomePageStart() {
             Shop Now
           </PrimaryButton>
         </div>
-        <div className="relative w-[625px] h-[607px]">
-          <Image
-            src="/images/phone-promotional.png"
-            alt="phone promo"
-            quality={90}
-            priority
-            fill
-            sizes="100vw"
-            style={{
-              objectFit: "contain",
-            }}
-          />
-        </div>
+        <figure>
+          <Image src={phonePromo} alt="phone promo" quality={90} priority />
+        </figure>
       </div>
     </HomepageSection>
   );

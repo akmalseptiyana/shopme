@@ -9,19 +9,17 @@ export function HomePageFeaturedProduct({ featuredProducts }) {
         {featuredProducts?.map((product) => {
           return (
             <div key={product.id} className="bg-[#F6F7FB] drop-shadow-xl">
-              <div className="w-[270px] h-[250px] bg-white">
-                <figure className="relative w-[270px] h-[237px]">
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    fill
-                    sizes="100vw"
-                    style={{
-                      objectFit: "contain",
-                    }}
-                  />
-                </figure>
-              </div>
+              <figure className="relative w-[270px] h-[237px] bg-white">
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{
+                    objectFit: "contain",
+                  }}
+                />
+              </figure>
               <div className="mt-4 text-center w-[270px] py-4 px-4">
                 <header>
                   <h3

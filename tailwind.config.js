@@ -17,6 +17,7 @@ module.exports = {
         "purple-primary": "#7E33E0",
         "off-purple": "#9F63B5",
         "off-blue": "#151875",
+        shade: "#EEEFFB",
       },
       fontFamily: {
         josefin: ["Josefin Sans", "sans-serif"],
@@ -29,6 +30,9 @@ module.exports = {
           lg: "2rem",
           "2xl": "6rem",
         },
+      },
+      backgroundImage: {
+        newslater: "url(/images/newslater.jpg)",
       },
     },
   },
