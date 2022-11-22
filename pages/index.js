@@ -32,7 +32,7 @@ export default function Home({
         <HomePageDiscount />
         <HomePageCategories topCategories={topCategories} />
         <HomePageNewslater />
-        <Sponsor />
+        <Sponsor className="mt-24" />
         <HomePageLeatestBlog />
       </HomePageContent>
     </Page>

@@ -5,10 +5,10 @@ import samsung from "../public/images/samsung.svg";
 import sandisk from "../public/images/sandisk-logo-2007.svg";
 import westernDigital from "../public/images/western-digital-2.svg";
 
-export function Sponsor() {
+export function Sponsor({ className }) {
   return (
-    <section>
-      <div className="container mt-24">
+    <section className={className}>
+      <div className="container">
         <div className="flex flex-col md:flex-row gap-y-20 items-center justify-around max-w-[904px] mx-auto">
           <figure>
             <Image

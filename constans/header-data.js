@@ -14,8 +14,8 @@ const dataLeft = [
 const dataRight = [
   { icon: ChevronDownIcon, text: "English" },
   { icon: ChevronDownIcon, text: "USD" },
-  { icon: UserIcon, text: "Login" },
-  { icon: HeartIcon, text: "Wishlist" },
+  { icon: UserIcon, text: "Login", href: "/login" },
+  { icon: HeartIcon, text: "Wishlist", href: "/wishlist" },
 ];
 
 export { dataLeft, dataRight };

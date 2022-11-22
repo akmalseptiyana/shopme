@@ -15,6 +15,7 @@ export function Footer() {
               type="email"
               className=" w-full md:w-[377px] h-11 bg-white rounded-[3px] outline-none pl-5"
               placeholder="Enter Email Address"
+              style={{ border: 0 }}
             />
             <PrimaryButton
               type="submit"

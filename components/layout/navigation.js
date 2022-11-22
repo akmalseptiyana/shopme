@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import clsx from "clsx";
 import {
@@ -11,6 +12,8 @@ import { links } from "../../constans/navigation-data";
 import { Container } from "../ui/container";
 
 function NavigationLinks({ isMobileOpen }) {
+  const router = useRouter();
+
   if (isMobileOpen) {
     return (
       <ul className="flex flex-col gap-y-5 mt-16">
@@ -18,7 +21,12 @@ function NavigationLinks({ isMobileOpen }) {
           <li key={index} className="px-4">
             <Link
               href={link.href}
-              className="flex items-center gap-x-1 text-base text-[#0D0E43] lato-regular"
+              className={clsx(
+                "flex items-center gap-x-1 text-base lato-regular",
+                router.pathname === link.href
+                  ? "text-pink-primary"
+                  : "text-[#0D0E43]"
+              )}
             >
               {link.name}
               {link.icon && <link.icon className="w-3 h-3 text-[#0D0E43]" />}
@@ -35,7 +43,12 @@ function NavigationLinks({ isMobileOpen }) {
         <li key={index}>
           <Link
             href={link.href}
-            className="flex items-center gap-x-1 text-base text-[#0D0E43] lato-regular"
+            className={clsx(
+              "flex items-center gap-x-1 text-base lato-regular",
+              router.pathname === link.href
+                ? "text-pink-primary"
+                : "text-[#0D0E43]"
+            )}
           >
             {link.name}
             {link.icon && <link.icon className="w-3 h-3 text-[#0D0E43]" />}

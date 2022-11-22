@@ -16,8 +16,9 @@ module.exports = {
         "pantone-purple": "#E0D3F5",
         "purple-primary": "#7E33E0",
         "off-purple": "#9F63B5",
-        "off-blue": "#151875",
+        "off-blue": "#111C85",
         shade: "#EEEFFB",
+        "sub-text": "#8A8FB9",
       },
       fontFamily: {
         josefin: ["Josefin Sans", "sans-serif"],
@@ -33,6 +34,10 @@ module.exports = {
       },
       backgroundImage: {
         newslater: "url(/images/newslater.jpg)",
+      },
+      gridTemplateColumns: {
+        cart: "2fr 1fr 1fr 1fr",
+        "cart-mobile": "1fr 2fr",
       },
     },
   },

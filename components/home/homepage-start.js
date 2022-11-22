@@ -15,7 +15,7 @@ export function HomePageStart() {
           <h1 className="text-4xl md:text-5xl md:leading-tight text-black josefin-bold mt-3 max-w-[644px]">
             New Furniture Collection Trends in 2022
           </h1>
-          <p className="text-base text-[#8A8FB9] lato-bold mt-3 max-w-[560px]">
+          <p className="text-base text-[#8A8FB9] lato-regular mt-3 max-w-[560px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in
             est adipiscing in phasellus non in justo.
           </p>

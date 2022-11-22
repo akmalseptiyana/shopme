@@ -1,4 +1,5 @@
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 import { dataLeft, dataRight } from "../../constans/header-data";
 import { Container } from "../ui/container";
@@ -22,6 +23,20 @@ export function GlobalHeader() {
         <div className="flex items-center gap-x-6">
           <ul className="flex items-center gap-x-4">
             {dataRight.map((data, index) => {
+              if (data.href) {
+                return (
+                  <li key={index} className="flex items-center gap-x-1">
+                    <Link
+                      href={data.href}
+                      className="flex items-center gap-x-1 text-base text-[#F1F1F1] josefin-semibold"
+                    >
+                      {data.text}
+                      <data.icon className="w-4 h-4 text-white" />
+                    </Link>
+                  </li>
+                );
+              }
+
               return (
                 <li key={index} className="flex items-center gap-x-1">
                   <p className="text-base text-[#F1F1F1] josefin-semibold">
@@ -33,9 +48,9 @@ export function GlobalHeader() {
             })}
           </ul>
 
-          <button>
+          <Link href="/shopping/cart">
             <ShoppingCartIcon className="w-6 h-6 text-white" />
-          </button>
+          </Link>
         </div>
       </Container>
     </header>

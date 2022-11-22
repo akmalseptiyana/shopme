@@ -1,0 +1,40 @@
+import Image from "next/image";
+import Link from "next/link";
+import image404 from "../public/images/404.png";
+
+import { Page } from "../components/layout/page/page";
+import { InternalPageHeader } from "../components/layout/page/internal-page-header";
+import { InternalPageContent } from "../components/layout/page/internal-page-content";
+import { Container } from "../components/ui/container";
+import { Sponsor } from "../components/sponsor";
+import { InternalPageSection } from "../components/layout/page/internal-page-section";
+
+export default function Custom404() {
+  return (
+    <Page>
+      <InternalPageHeader
+        breadcrumb={[
+          { name: "Home", href: "/" },
+          { name: "404 Not Found", href: "", current: true },
+        ]}
+      />
+      <InternalPageContent>
+        <Container>
+          <InternalPageSection className="flex flex-col items-center">
+            <figure>
+              <Image src={image404} alt="404 image" priority />
+            </figure>
+            <Link
+              href="/"
+              className="text-base text-white josefin-regular py-3 px-8 bg-pink-primary rounded-[3px] mt-10 md:mt-0"
+            >
+              Back To Home
+            </Link>
+          </InternalPageSection>
+
+          <Sponsor className="mt-32" />
+        </Container>
+      </InternalPageContent>
+    </Page>
+  );
+}

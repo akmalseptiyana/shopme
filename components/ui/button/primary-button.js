@@ -2,6 +2,7 @@ import clsx from "clsx";
 
 export function PrimaryButton({
   className,
+  color = "bg-pink-primary",
   type,
   icon,
   iconPosition = "left",
@@ -10,7 +11,8 @@ export function PrimaryButton({
   return (
     <button
       className={clsx(
-        "leading-none bg-pink-primary text-base text-white rounded-sm",
+        "leading-none text-base text-white rounded-sm",
+        color,
         className
       )}
       type={type}
