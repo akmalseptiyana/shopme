@@ -5,6 +5,8 @@ import {
   MagnifyingGlassPlusIcon,
 } from "@heroicons/react/24/outline";
 
+import { Rating } from "../ui/rating";
+
 export function ListView({ products }) {
   return (
     <div className="flex flex-col gap-y-8 mt-24">
@@ -27,9 +29,18 @@ export function ListView({ products }) {
               <h3 className="text-xl text-off-blue josefin-bold max-w-[550px]">
                 {product.title}
               </h3>
-              <h4 className="text-base text-off-blue josefin-regular mt-3">
-                $27.00
-              </h4>
+              <div className="flex items-baseline gap-x-4">
+                <h4 className="text-lg text-off-blue josefin-regular mt-3">
+                  ${product.price}
+                </h4>
+                <Rating
+                  value={product.rating.rate}
+                  width={24}
+                  height={24}
+                  spacing={4}
+                  className="top-1"
+                />
+              </div>
               <p className="text-lg text-[#9295AA] lato-regular mt-2 max-w-[591px]">
                 {product.description}
               </p>

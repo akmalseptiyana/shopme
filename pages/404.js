@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import image404 from "../public/images/404.png";
+import image404 from "../public/assets/images/404.svg";
 
 import { Page } from "../components/layout/page/page";
 import { InternalPageHeader } from "../components/layout/page/internal-page-header";

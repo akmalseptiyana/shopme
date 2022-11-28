@@ -1,5 +1,5 @@
 import Image from "next/image";
-import smartwatch from "../../public/images/smartwatch.png";
+import smartwatch from "../../public/assets/images/smartwatch.png";
 
 import { PrimaryButton } from "../ui/button/primary-button";
 import { HomepageSection } from "./homepage-section";

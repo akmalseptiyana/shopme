@@ -1,9 +1,9 @@
 import Image from "next/image";
-import acer from "../public/images/acer-2011.svg";
-import apple from "../public/images/apple-14.svg";
-import samsung from "../public/images/samsung.svg";
-import sandisk from "../public/images/sandisk-logo-2007.svg";
-import westernDigital from "../public/images/western-digital-2.svg";
+import acer from "../public/assets/icons/logo-acer-1.svg";
+import apple from "../public/assets/icons/apple.svg";
+import samsung from "../public/assets/icons/samsung.svg";
+import sandisk from "../public/assets/icons/sandisk-logo-2007.svg";
+import westernDigital from "../public/assets/icons/western-digital-2.svg";
 
 export function Sponsor({ className }) {
   return (

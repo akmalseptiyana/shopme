@@ -33,7 +33,7 @@ module.exports = {
         },
       },
       backgroundImage: {
-        newslater: "url(/images/newslater.jpg)",
+        newslater: "url(/assets/images/newslater.jpg)",
       },
       gridTemplateColumns: {
         cart: "2fr 1fr 1fr 1fr",

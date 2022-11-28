@@ -5,7 +5,7 @@ export function Features() {
     <div className="flex flex-wrap justify-center gap-x-7 gap-y-8 mt-14">
       <div className="max-w-[270px] flex flex-col items-center bg-white px-7 pb-11 pt-14 shadow">
         <Image
-          src="/images/icons8-free-delivery.png"
+          src="/assets/icons/icons8-free-delivery.png"
           alt="free delivery"
           width={60}
           height={60}
@@ -21,7 +21,7 @@ export function Features() {
       </div>
       <div className="max-w-[270px] flex flex-col items-center bg-white px-7 pb-11 pt-14 shadow">
         <Image
-          src="/images/icons8-cashback.png"
+          src="/assets/icons/icons8-cashback.png"
           alt="cashback"
           width={60}
           height={60}
@@ -37,7 +37,7 @@ export function Features() {
       </div>
       <div className="max-w-[270px] flex flex-col items-center bg-white px-7 pb-11 pt-14 shadow">
         <Image
-          src="/images/icons8-best-seller.png"
+          src="/assets/icons/icons8-best-seller.png"
           alt="best seller"
           width={60}
           height={60}
@@ -53,7 +53,7 @@ export function Features() {
       </div>
       <div className="max-w-[270px] flex flex-col items-center bg-white px-7 pb-11 pt-14 shadow">
         <Image
-          src="/images/icons8-last-24-hours.png"
+          src="/assets/icons/icons8-24-7.png"
           alt="24/7 support"
           width={60}
           height={60}

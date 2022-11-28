@@ -7,6 +7,7 @@ export function PrimaryButton({
   icon,
   iconPosition = "left",
   children,
+  ...rest
 }) {
   return (
     <button
@@ -16,6 +17,7 @@ export function PrimaryButton({
         className
       )}
       type={type}
+      {...rest}
     >
       {children}
     </button>

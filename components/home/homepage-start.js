@@ -1,5 +1,5 @@
 import Image from "next/image";
-import phonePromo from "../../public/images/phone-promotional.png";
+import phonePromo from "../../public/assets/images/phone-promotional.png";
 
 import { HomepageSection } from "./homepage-section";
 import { PrimaryButton } from "../ui/button/primary-button";

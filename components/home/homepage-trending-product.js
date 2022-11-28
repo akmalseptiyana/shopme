@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import controller from "../../public/images/controller.png";
-import botle from "../../public/images/botle.png";
+import controller from "../../public/assets/images/controller.png";
+import botle from "../../public/assets/images/botle.png";
 
 import { HomepageSection } from "./homepage-section";
 import { trendingProductDiscount } from "../../constans/discount";

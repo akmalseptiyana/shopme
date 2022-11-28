@@ -1,3 +1,7 @@
-export function CardProduct({ children, className }) {
-  return <section className={className}>{children}</section>;
+export function CardProduct({ children, className, ...rest }) {
+  return (
+    <section className={className} {...rest}>
+      {children}
+    </section>
+  );
 }

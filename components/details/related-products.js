@@ -8,8 +8,6 @@ import { CardContent } from "../ui/card/card-content";
 export function RelatedProducts({ data }) {
   const [relatedProducts, setRelatedProducts] = useState([]);
 
-  console.log(relatedProducts);
-
   useEffect(() => {
     fetch(`${process.env.BASE_URL}/products/category/${data.category}`)
       .then((res) => res.json())
@@ -24,7 +22,7 @@ export function RelatedProducts({ data }) {
       <div className="flex flex-wrap justify-center md:justify-start gap-x-20 gap-y-8 mt-12">
         {relatedProducts?.map((product) => {
           return (
-            <CardProduct>
+            <CardProduct key={product.id}>
               <CardMedia
                 image={product.image}
                 alt={product.title}

@@ -3,10 +3,10 @@ import { format } from "date-fns";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import { CalendarDaysIcon } from "@heroicons/react/24/outline";
 
-import singleblog1 from "../../public/images/single-blog-1.png";
-import singleblog2 from "../../public/images/single-blog-2.png";
-import singleblog3 from "../../public/images/single-blog-3.png";
-import singleblog4 from "../../public/images/single-blog-4.png";
+import singleblog1 from "../../public/assets/images/single-blog-1.png";
+import singleblog2 from "../../public/assets/images/single-blog-2.png";
+import singleblog3 from "../../public/assets/images/single-blog-3.png";
+import singleblog4 from "../../public/assets/images/single-blog-4.png";
 import { FormGroup } from "../ui/form/form-group";
 import { InputText } from "../ui/form/input-text";
 import { InputTextarea } from "../ui/form/input-textarea";

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import contact from "../../public/images/contact.png";
+import contact from "../../public/assets/images/contact.svg";
 import { PrimaryButton } from "../ui/button/primary-button";
 
 import { FormGroup } from "../ui/form/form-group";

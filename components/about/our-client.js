@@ -1,7 +1,7 @@
 import Image from "next/image";
-import client1 from "../../public/images/client-1.png";
-import client2 from "../../public/images/client-2.png";
-import client3 from "../../public/images/client-3.png";
+import client1 from "../../public/assets/images/client-1.png";
+import client2 from "../../public/assets/images/client-2.png";
+import client3 from "../../public/assets/images/client-3.png";
 
 export function OurClient() {
   return (

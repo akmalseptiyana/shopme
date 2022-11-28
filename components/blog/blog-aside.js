@@ -5,10 +5,10 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { InputText } from "../../components/ui/form/input-text";
 import { FormGroup } from "../../components/ui/form/form-group";
 import { SocialIcons } from "../ui/social-icons";
-import offerProduct1 from "../../public/images/offer-product-1.png";
-import offerProduct2 from "../../public/images/offer-product-2.png";
-import offerProduct3 from "../../public/images/offer-product-3.png";
-import offerProduct4 from "../../public/images/offer-product-4.png";
+import offerProduct1 from "../../public/assets/images/offer-product-1.png";
+import offerProduct2 from "../../public/assets/images/offer-product-2.png";
+import offerProduct3 from "../../public/assets/images/offer-product-3.png";
+import offerProduct4 from "../../public/assets/images/offer-product-4.png";
 
 export function BlogAside({ data }) {
   const { recentPost, saleProduct } = data;

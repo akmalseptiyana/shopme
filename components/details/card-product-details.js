@@ -3,8 +3,12 @@ import Image from "next/image";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { PrimaryButton } from "../ui/button/primary-button";
 import { SocialIcons } from "../ui/social-icons";
+import { Rating } from "../ui/rating";
+import { useCart } from "../../lib/hooks/cart-context";
 
 export function CardProductDetails({ data }) {
+  const { dispatch } = useCart();
+
   return (
     <div className="flex flex-wrap items-center gap-x-10 gap-y-8 bg-white py-8 lg:py-3 px-4 max-w-[1170px] rounded-sm shadow">
       <figure className="relative w-[550px] h-[200px] md:h-[450px]">
@@ -21,6 +25,12 @@ export function CardProductDetails({ data }) {
         <h3 className="text-3xl md:text-4xl text-[#0D134E] josefin-semibold">
           {data.title}
         </h3>
+        <div className="relative flex items-end max-w-[160px] mt-4">
+          <Rating value={data.rating.rate} width={24} height={24} spacing={4} />
+          <span className="text-sm text-navy-blue josefin-regular absolute right-0">
+            ({data.rating.count})
+          </span>
+        </div>
         <h4 className="text-base text-navy-blue josefin-regular mt-3">
           ${data.price}
         </h4>
@@ -28,7 +38,10 @@ export function CardProductDetails({ data }) {
           {data.description}
         </p>
         <div className="flex items-center gap-x-5 mt-8">
-          <PrimaryButton className="py-4 px-7 josefin-regular">
+          <PrimaryButton
+            className="py-4 px-7 josefin-regular"
+            onClick={() => dispatch({ type: "ADD_TO_CART", item: data })}
+          >
             Add To Cart
           </PrimaryButton>
           <HeartIcon className="w-7 h-7 text-[#535399]" />

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 import NProgress from "nprogress";
 import { Layout } from "../components/layout";
+import { CartProvider } from "../lib/hooks/cart-context";
 
 export const progress = NProgress.configure({
   showSpinner: false,
@@ -31,9 +32,11 @@ function MyApp({ Component, pageProps, router }) {
   }, []);
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <CartProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </CartProvider>
   );
 }
 

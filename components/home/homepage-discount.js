@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { CheckIcon } from "@heroicons/react/24/outline";
-import backpack from "../../public/images/backpack.png";
+import backpack from "../../public/assets/images/backpack.png";
 
 import { HomepageSection } from "./homepage-section";
 import { PrimaryButton } from "../ui/button/primary-button";
