@@ -67,7 +67,9 @@ export function Navigation() {
     <nav className="h-10 flex items-center my-5">
       <Container className="flex items-center">
         <div className="flex flex-1 items-center gap-x-4 xl:gap-x-20">
-          <h1 className="text-3xl text-[#0D0E43] josefin-bold">Shopme</h1>
+          <Link href="/" className="text-3xl text-[#0D0E43] josefin-bold">
+            Shopme
+          </Link>
           <NavigationLinks />
         </div>
 

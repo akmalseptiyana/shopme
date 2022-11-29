@@ -1,3 +1,4 @@
+import Head from "next/head";
 import fetch from "cross-fetch";
 import { useState } from "react";
 
@@ -16,6 +17,9 @@ export default function Products({ products }) {
 
   return (
     <Page>
+      <Head>
+        <title>Products</title>
+      </Head>
       <InternalPageHeader
         breadcrumb={[
           { name: "Home", href: "/" },

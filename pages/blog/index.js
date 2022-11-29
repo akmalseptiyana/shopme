@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import { Page } from "../../components/layout/page/page";
 import { InternalPageHeader } from "../../components/layout/page/internal-page-header";
 import { InternalPageContent } from "../../components/layout/page/internal-page-content";
@@ -10,6 +12,9 @@ import { Sponsor } from "../../components/sponsor";
 export default function Blog({ data, recentPost, saleProduct }) {
   return (
     <Page>
+      <Head>
+        <title>Blog</title>
+      </Head>
       <InternalPageHeader
         breadcrumb={[
           { name: "Home", href: "/" },

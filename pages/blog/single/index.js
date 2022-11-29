@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import { BlogAside } from "../../../components/blog/blog-aside";
 import { Single } from "../../../components/blog/single";
 import { InternalPageContent } from "../../../components/layout/page/internal-page-content";
@@ -10,6 +12,9 @@ import { Container } from "../../../components/ui/container";
 export default function SingleBlog({ data, recentPost, saleProduct }) {
   return (
     <Page>
+      <Head>
+        <title>Single Blog</title>
+      </Head>
       <InternalPageHeader
         breadcrumb={[
           { name: "Home", href: "/" },

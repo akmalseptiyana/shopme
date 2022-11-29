@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import { InternalPageContent } from "../components/layout/page/internal-page-content";
 import { InternalPageHeader } from "../components/layout/page/internal-page-header";
 import { InternalPageSection } from "../components/layout/page/internal-page-section";
@@ -9,6 +11,9 @@ import { ContactForm } from "../components/contact/contact-form";
 export default function Contact() {
   return (
     <Page>
+      <Head>
+        <title>Contact</title>
+      </Head>
       <InternalPageHeader
         breadcrumb={[
           { name: "Home", href: "/" },

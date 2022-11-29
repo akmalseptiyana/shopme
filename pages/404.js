@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 import image404 from "../public/assets/images/404.svg";
 
 import { Page } from "../components/layout/page/page";
@@ -12,6 +13,9 @@ import { InternalPageSection } from "../components/layout/page/internal-page-sec
 export default function Custom404() {
   return (
     <Page>
+      <Head>
+        <title>Not Found</title>
+      </Head>
       <InternalPageHeader
         breadcrumb={[
           { name: "Home", href: "/" },

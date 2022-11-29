@@ -1,4 +1,5 @@
 import fetch from "cross-fetch";
+import Head from "next/head";
 
 import { Page } from "../components/layout/page/page";
 import { HomePageStart } from "../components/home/homepage-start";
@@ -22,6 +23,9 @@ export default function Home({
 }) {
   return (
     <Page>
+      <Head>
+        <title>Home</title>
+      </Head>
       <HomePageContent>
         <HomePageStart />
         <HomePageFeaturedProduct featuredProducts={featuredProducts} />

@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import { InternalPageContent } from "../components/layout/page/internal-page-content";
 import { InternalPageHeader } from "../components/layout/page/internal-page-header";
 import { Page } from "../components/layout/page/page";
@@ -9,6 +11,9 @@ import { LoginForm } from "../components/login/login-form";
 export default function Login() {
   return (
     <Page>
+      <Head>
+        <title>Login</title>
+      </Head>
       <InternalPageHeader
         breadcrumb={[
           { name: "Home", href: "/" },

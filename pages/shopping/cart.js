@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import { Page } from "../../components/layout/page/page";
 import { InternalPageHeader } from "../../components/layout/page/internal-page-header";
 import { InternalPageContent } from "../../components/layout/page/internal-page-content";
@@ -9,6 +11,9 @@ import { CartTotals } from "../../components/cart/cart-totals";
 export default function Cart() {
   return (
     <Page>
+      <Head>
+        <title>Shopping Cart</title>
+      </Head>
       <InternalPageHeader
         breadcrumb={[
           { name: "Home", href: "/" },
