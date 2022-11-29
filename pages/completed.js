@@ -1,12 +1,10 @@
-import Image from "next/image";
-import completed from "../public/assets/images/completed.svg";
+import Link from "next/link";
 
 import { Page } from "../components/layout/page/page";
 import { InternalPageHeader } from "../components/layout/page/internal-page-header";
 import { InternalPageContent } from "../components/layout/page/internal-page-content";
 import { InternalPageSection } from "../components/layout/page/internal-page-section";
 import { Container } from "../components/ui/container";
-import { PrimaryButton } from "../components/ui/button/primary-button";
 import { Sponsor } from "../components/sponsor";
 
 export default function Completed() {
@@ -51,14 +49,13 @@ export default function Completed() {
                 be completed within 3-6 hours. You will receive an email
                 confirmation when your order is completed.
               </p>
-              <PrimaryButton className="py-4 px-9 lato-bold mt-12">
+              <Link
+                href="/"
+                className="inline-block leading-none text-base text-white rounded-sm py-4 px-9 lato-bold bg-pink-primary mt-12"
+              >
                 Back To Home
-              </PrimaryButton>
+              </Link>
             </div>
-
-            <figure className="hidden lg:block absolute top-10 left-0">
-              <Image src={completed} alt="completed" />
-            </figure>
           </InternalPageSection>
 
           <Sponsor className="mt-60" />

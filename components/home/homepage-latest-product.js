@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { HomepageSection } from "./homepage-section";
 import { discount } from "../../constans/discount";
@@ -9,7 +10,7 @@ export function HomePageLatestProduct({ latestProducts }) {
       <div className="flex flex-wrap gap-x-9 gap-y-32 justify-center mt-14">
         {latestProducts?.map((product, index) => {
           return (
-            <div key={product.id} className="max-w-[360px]">
+            <div key={product.id} className="relative max-w-[360px]">
               <figure className="relative w-[360px] h-[269px] bg-white">
                 <Image
                   src={product.image}
@@ -37,6 +38,11 @@ export function HomePageLatestProduct({ latestProducts }) {
                   </span>
                 </div>
               </div>
+
+              <Link
+                href={`/product/details/${product.id}`}
+                className="absolute inset-0"
+              ></Link>
             </div>
           );
         })}

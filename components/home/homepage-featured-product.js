@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { HomepageSection } from "./homepage-section";
 
@@ -8,7 +9,10 @@ export function HomePageFeaturedProduct({ featuredProducts }) {
       <div className="flex flex-wrap gap-x-7 gap-y-8 justify-center mt-12">
         {featuredProducts?.map((product) => {
           return (
-            <div key={product.id} className="bg-[#F6F7FB] drop-shadow-xl">
+            <div
+              key={product.id}
+              className="relative bg-[#F6F7FB] drop-shadow-xl"
+            >
               <figure className="relative w-[270px] h-[237px] bg-white">
                 <Image
                   src={product.image}
@@ -33,6 +37,11 @@ export function HomePageFeaturedProduct({ featuredProducts }) {
                   ${product.price}
                 </h5>
               </div>
+
+              <Link
+                href={`/product/details/${product.id}`}
+                className="absolute inset-0"
+              ></Link>
             </div>
           );
         })}

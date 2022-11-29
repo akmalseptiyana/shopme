@@ -6,7 +6,6 @@ import { useCart } from "../../lib/hooks/cart-context";
 
 export function ShoppingCart() {
   const { state, dispatch } = useCart();
-  console.log(state.cart);
 
   return (
     <div className="flex-auto max-w-[800px]">

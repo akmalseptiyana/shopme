@@ -1,8 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import phonePromo from "../../public/assets/images/phone-promotional.png";
 
 import { HomepageSection } from "./homepage-section";
-import { PrimaryButton } from "../ui/button/primary-button";
 
 export function HomePageStart() {
   return (
@@ -10,21 +10,21 @@ export function HomePageStart() {
       <div className="flex flex-wrap items-center justify-between gap-y-20">
         <div>
           <p className="text-base text-pink-primary lato-bold">
-            Best Furniture For Your Castle...
+            Shop gifts for everyone on your list...
           </p>
           <h1 className="text-4xl md:text-5xl md:leading-tight text-black josefin-bold mt-3 max-w-[644px]">
-            New Furniture Collection Trends in 2022
+            The Best Place To Find And Buy Amazing Products
           </h1>
           <p className="text-base text-[#8A8FB9] lato-regular mt-3 max-w-[560px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in
             est adipiscing in phasellus non in justo.
           </p>
-          <PrimaryButton
-            className="py-4 px-10 josefin-semibold mt-7"
-            type="button"
+          <Link
+            href="/products"
+            className="inline-block leading-none text-base text-white rounded-sm py-4 px-10 josefin-semibold bg-pink-primary mt-7"
           >
             Shop Now
-          </PrimaryButton>
+          </Link>
         </div>
         <figure>
           <Image src={phonePromo} alt="phone promo" quality={90} priority />

@@ -5,9 +5,12 @@ import {
   MagnifyingGlassPlusIcon,
 } from "@heroicons/react/24/outline";
 
+import { useCart } from "../../lib/hooks/cart-context";
 import { Rating } from "../ui/rating";
 
 export function ListView({ products }) {
+  const { dispatch } = useCart();
+
   return (
     <div className="flex flex-col gap-y-8 mt-24">
       {products?.map((product) => {
@@ -45,14 +48,25 @@ export function ListView({ products }) {
                 {product.description}
               </p>
               <ul className="flex items-center gap-x-5 mt-8">
-                <li className="w-8 h-8 rounded-full flex items-center justify-center shadow">
-                  <ShoppingCartIcon className="w-5 h-5 text-[#535399]" />
+                <li>
+                  <button
+                    className="w-8 h-8 rounded-full flex items-center justify-center shadow"
+                    onClick={() =>
+                      dispatch({ type: "ADD_TO_CART", item: product })
+                    }
+                  >
+                    <ShoppingCartIcon className="w-5 h-5 text-[#535399]" />
+                  </button>
                 </li>
-                <li className="w-8 h-8 rounded-full flex items-center justify-center shadow">
-                  <HeartIcon className="w-5 h-5 text-[#535399]" />
+                <li>
+                  <button className="w-8 h-8 rounded-full flex items-center justify-center shadow">
+                    <HeartIcon className="w-5 h-5 text-[#535399]" />
+                  </button>
                 </li>
-                <li className="w-8 h-8 rounded-full flex items-center justify-center shadow">
-                  <MagnifyingGlassPlusIcon className="w-5 h-5 text-[#535399]" />
+                <li>
+                  <button className="w-8 h-8 rounded-full flex items-center justify-center shadow">
+                    <MagnifyingGlassPlusIcon className="w-5 h-5 text-[#535399]" />
+                  </button>
                 </li>
               </ul>
             </div>

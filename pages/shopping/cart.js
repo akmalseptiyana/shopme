@@ -17,7 +17,7 @@ export default function Cart() {
       />
       <InternalPageContent>
         <Container>
-          <InternalPageSection className="flex flex-wrap gap-20 mt-32">
+          <InternalPageSection className="flex flex-col lg:flex-row gap-20 mt-32">
             <ShoppingCart />
             <CartTotals />
           </InternalPageSection>

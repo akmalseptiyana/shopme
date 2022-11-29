@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { HomepageSection } from "./homepage-section";
 
@@ -8,7 +9,10 @@ export function HomePageCategories({ topCategories }) {
       <div className="flex flex-wrap justify-center gap-10 mt-14">
         {topCategories?.slice(2).map((product) => {
           return (
-            <div key={product.id} className="flex flex-col items-center">
+            <div
+              key={product.id}
+              className="relative flex flex-col items-center"
+            >
               <figure className="relative w-[269px] h-[269px]">
                 <Image
                   src={product.image}
@@ -29,6 +33,11 @@ export function HomePageCategories({ topCategories }) {
               <h4 className="text-base text-navy-blue josefin-regular mt-3">
                 ${product.price}
               </h4>
+
+              <Link
+                href={`/product/details/${product.id}`}
+                className="absolute inset-0"
+              ></Link>
             </div>
           );
         })}

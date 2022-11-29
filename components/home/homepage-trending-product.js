@@ -17,7 +17,7 @@ export function HomePageTrendingProducts({ trendingProducts }) {
             return (
               <div
                 key={product.id}
-                className="w-[270px] pt-3 px-3 pb-8 shadow-md bg-[#F5F6F8]"
+                className="relative w-[270px] pt-3 px-3 pb-8 shadow-md bg-[#F5F6F8]"
               >
                 <figure className="relative w-[247px] h-[244px] bg-white">
                   <Image
@@ -41,6 +41,11 @@ export function HomePageTrendingProducts({ trendingProducts }) {
                     </span>
                   </h4>
                 </div>
+
+                <Link
+                  href={`/product/details/${product.id}`}
+                  className="absolute inset-0"
+                ></Link>
               </div>
             );
           })}

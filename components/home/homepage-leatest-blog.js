@@ -38,7 +38,7 @@ export function HomePageLeatestBlog() {
               horse taped mightly
             </p>
             <Link
-              href="#"
+              href="/blog"
               className="text-base text-navy-blue lato-regular border-b border-navy-blue pb-[2px]"
             >
               Read More
@@ -72,7 +72,7 @@ export function HomePageLeatestBlog() {
               horse taped mightly
             </p>
             <Link
-              href="#"
+              href="/blog"
               className="text-base text-navy-blue lato-regular border-b border-navy-blue pb-[2px]"
             >
               Read More
@@ -106,7 +106,7 @@ export function HomePageLeatestBlog() {
               horse taped mightly
             </p>
             <Link
-              href="#"
+              href="/blog"
               className="text-base text-navy-blue lato-regular border-b border-navy-blue pb-[2px]"
             >
               Read More

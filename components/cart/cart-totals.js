@@ -9,7 +9,7 @@ import { useCart } from "../../lib/hooks/cart-context";
 export function CartTotals() {
   const [grandTotal, setGrandTotal] = useState(false);
   const [disabled, setDisabled] = useState(true);
-  const { state } = useCart();
+  const { state, dispatch } = useCart();
 
   const tax = 10;
   const subTotal = Object.keys(state.cart)
@@ -34,6 +34,7 @@ export function CartTotals() {
   }
 
   function handleSubmit() {
+    dispatch({ type: "RESET_CART" });
     Router.push("/completed");
   }
 
@@ -42,7 +43,7 @@ export function CartTotals() {
       <h3 className="text-xl text-[#1D3178] josefin-bold text-center">
         Cart Totals
       </h3>
-      <div className="w-full sm:w-[374px] h-[284px] bg-[#F4F4FC] py-8 px-7 rounded-[3px] mt-10">
+      <div className="w-full lg:w-[374px] h-[284px] bg-[#F4F4FC] py-8 px-7 rounded-[3px] mt-10">
         <div className="flex items-center border-b-2 border-[#E8E6F1] pb-3">
           <h4 className="text-lg text-[#1D3178] josefin-semibold flex-1">
             Subtotals:

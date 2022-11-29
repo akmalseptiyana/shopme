@@ -1,9 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import backpack from "../../public/assets/images/backpack.png";
 
 import { HomepageSection } from "./homepage-section";
-import { PrimaryButton } from "../ui/button/primary-button";
 
 export function HomePageDiscount() {
   return (
@@ -76,12 +76,12 @@ export function HomePageDiscount() {
               </li>
             </div>
           </ul>
-          <PrimaryButton
-            type="button"
-            className="py-5 px-12 josefin-regular mt-9"
+          <Link
+            href="/products"
+            className="inline-block leading-none text-base text-white rounded-sm py-4 px-10 josefin-semibold bg-pink-primary mt-7"
           >
             Shop Now
-          </PrimaryButton>
+          </Link>
         </div>
         <figure>
           <Image src={backpack} alt="backpack" quality={90} />
