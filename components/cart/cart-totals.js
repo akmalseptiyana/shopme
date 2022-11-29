@@ -7,7 +7,7 @@ import { PrimaryButton } from "../ui/button/primary-button";
 import { useCart } from "../../lib/hooks/cart-context";
 
 export function CartTotals() {
-  const [grandTotal, setGrandTotal] = useState(false);
+  const [calculateTax, setCalculateTax] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const { state, dispatch } = useCart();
 
@@ -25,17 +25,21 @@ export function CartTotals() {
     const isChecked = e.target.checked;
 
     if (isChecked) {
-      setDisabled(false);
-      setGrandTotal(true);
+      setCalculateTax(true);
+      if (Object.keys(state.cart).length > 0) {
+        setDisabled(false);
+      }
     } else {
+      setCalculateTax(false);
       setDisabled(true);
-      setGrandTotal(false);
     }
   }
 
   function handleSubmit() {
-    dispatch({ type: "RESET_CART" });
-    Router.push("/completed");
+    if (calculateTax && Object.keys(state.cart).length > 0) {
+      Router.push("/completed");
+      dispatch({ type: "RESET_CART" });
+    }
   }
 
   return (
@@ -57,7 +61,7 @@ export function CartTotals() {
             Totals:
           </h4>
           <span className="text-base text-[#15245E] lato-regular">
-            ${grandTotal ? total : subTotal}
+            ${calculateTax ? total : subTotal}
           </span>
         </div>
         <FormGroup className="items-center gap-x-2 mt-7">
