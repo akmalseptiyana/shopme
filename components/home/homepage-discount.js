@@ -12,9 +12,9 @@ export function HomePageDiscount() {
         <li>
           <button
             type="button"
-            className="text-base md:text-lg text-navy-blue lato-regular"
+            className="text-base md:text-lg text-navy-blue lato-regular underline"
           >
-            Wood Chair
+            Brown Backpack
           </button>
         </li>
         <li>
@@ -22,7 +22,7 @@ export function HomePageDiscount() {
             type="button"
             className="text-base md:text-lg text-navy-blue lato-regular"
           >
-            Plastic Chair
+            Smartwatch
           </button>
         </li>
         <li>
@@ -30,7 +30,7 @@ export function HomePageDiscount() {
             type="button"
             className="text-base md:text-lg text-navy-blue lato-regular"
           >
-            Sofa Collection
+            T-shirt
           </button>
         </li>
       </ul>
@@ -40,24 +40,27 @@ export function HomePageDiscount() {
             20% Discount Of All Products
           </h3>
           <p className="text-xl text-pink-primary josefin-regular mt-4">
-            Eams Sofa Compact
+            Brown Backpack
           </p>
           <p className="text-base text-[#B7BACB] lato-regular max-w-[523px] mt-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu eget
-            feugiat habitasse nec, bibendum condimentum.
+            With multiple compartments, pockets, and compartments, this backpack
+            has plenty of room for all of your belongings, from your laptop and
+            books to your water bottle and snacks. The padded shoulder straps
+            and back panel ensure a comfortable and ergonomic fit, while the
+            sturdy materials and construction make it durable.
           </p>
           <ul className="flex flex-wrap max-w-[510px] gap-x-11 gap-y-3 mt-7">
             <div className="space-y-3">
               <li className="flex items-center space-x-2">
                 <CheckIcon className="w-4 h-4 text-[#7569B2]" />
                 <span className="text-base text-[#B8B8DC] lato-regular">
-                  Material expose like metals
+                  Adjustable shoulder straps for a comfortable fit
                 </span>
               </li>
               <li className="flex items-center space-x-2">
                 <CheckIcon className="w-4 h-4 text-[#7569B2]" />
                 <span className="text-base text-[#B8B8DC] lato-regular">
-                  Clear lines and geomatric figures
+                  Padded back panel for added comfort and support
                 </span>
               </li>
             </div>
@@ -71,7 +74,7 @@ export function HomePageDiscount() {
               <li className="flex items-center space-x-2">
                 <CheckIcon className="w-4 h-4 text-[#7569B2]" />
                 <span className="text-base text-[#B8B8DC] lato-regular">
-                  Material expose like metals
+                  Durable materials for long-lasting use
                 </span>
               </li>
             </div>

@@ -43,7 +43,7 @@ export default function Home({
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const resFeaturedProducts = await fetch(
     `${process.env.BASE_URL}/products?limit=4`
   );

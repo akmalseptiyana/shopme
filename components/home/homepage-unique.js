@@ -19,20 +19,19 @@ export function HomePageUnique() {
             <li className="flex items-center space-x-3">
               <div className="w-3 h-3 rounded-full bg-[#F52B70] shrink-0"></div>
               <p className="text-base text-[#ACABC3] lato-regular">
-                All frames constructed with hardwood solids and laminates
+                Touchscreen display
               </p>
             </li>
             <li className="flex items-center space-x-3">
               <div className="w-3 h-3 rounded-full bg-[#2B2BF5] shrink-0"></div>
               <p className="text-base text-[#ACABC3] lato-regular max-w-[461px]">
-                Reinforced with double wood dowels, glue, screw - nails corner
-                blocks and machine nails
+                Water-resistant design
               </p>
             </li>
             <li className="flex items-center space-x-3">
               <div className="w-3 h-3 rounded-full bg-[#2BF5CC] shrink-0"></div>
               <p className="text-base text-[#ACABC3] lato-regular">
-                Arms, backs and seats are structurally reinforced
+                Built-in GPS
               </p>
             </li>
           </ul>
@@ -41,7 +40,7 @@ export function HomePageUnique() {
               Add To Cart
             </PrimaryButton>
             <h4 className="text-sm text-navy-blue josefin-semibold">
-              B&B Italian Sofa <br />
+              Smartwatch <br />
               <span className="text-navy-blue lato-regular">$32.00</span>
             </h4>
           </div>

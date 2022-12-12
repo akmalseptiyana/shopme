@@ -16,8 +16,10 @@ export function HomePageStart() {
             The Best Place To Find And Buy Amazing Products
           </h1>
           <p className="text-base text-[#8A8FB9] lato-regular mt-3 max-w-[560px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in
-            est adipiscing in phasellus non in justo.
+            Welcome to our ecommerce store! We offer a wide range of products to
+            fit your needs, from clothing, accessories and electronics. Our
+            top-quality products are carefully curated to provide you with the
+            best shopping experience possible.
           </p>
           <Link
             href="/products"

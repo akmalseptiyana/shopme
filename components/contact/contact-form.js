@@ -14,9 +14,9 @@ export function ContactForm() {
           Get In Touch
         </h3>
         <p className="text-base text-sub-text lato-regular mt-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis neque
-          ultrices tristique amet erat vitae eget dolor los vitae lobortis quis
-          bibendum quam.
+          To get in touch, please contact me at [insert contact information]. I
+          would be happy to answer any questions or concerns you may have. Thank
+          you.
         </p>
         <form className="mt-11">
           <FormGroup className="gap-x-6">

@@ -6,10 +6,10 @@ export function ContactStart() {
           Information About us
         </h3>
         <p className="text-base text-sub-text lato-regular mt-3">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis neque
-          ultrices mattis aliquam, malesuada diam est. Malesuada sem tristique
-          amet erat vitae eget dolor lobortis. Accumsan faucibus vitae lobortis
-          quis bibendum quam.
+          We are a team of dedicated professionals who are committed to
+          providing top-quality services to our clients. With years of
+          experience and expertise in our respective fields, we are confident in
+          our ability to deliver exceptional results.
         </p>
         <div className="flex items-center space-x-3 mt-10">
           <div className="w-6 h-6 rounded-full bg-[#5625DF]"></div>

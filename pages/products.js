@@ -43,7 +43,7 @@ export default function Products({ products }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`${process.env.BASE_URL}/products`);
   const products = await res.json();
 

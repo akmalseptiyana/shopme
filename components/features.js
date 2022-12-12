@@ -15,8 +15,7 @@ export function Features() {
           Free Delivery
         </h3>
         <p className="text-base text-[#1a0b5b]/[.3] lato-bold text-center mt-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus
-          gravida.
+          Free delivery is available on all orders placed on our website.
         </p>
       </div>
       <div className="max-w-[270px] flex flex-col items-center bg-white px-7 pb-11 pt-14 shadow">
@@ -31,8 +30,8 @@ export function Features() {
           100% Cash Back
         </h3>
         <p className="text-base text-[#1a0b5b]/[.3] lato-bold text-center mt-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus
-          gravida.
+          If you purchase any product from our store, you will receive 100% cash
+          back on your purchase.
         </p>
       </div>
       <div className="max-w-[270px] flex flex-col items-center bg-white px-7 pb-11 pt-14 shadow">
@@ -47,8 +46,8 @@ export function Features() {
           Premium Quality
         </h3>
         <p className="text-base text-[#1a0b5b]/[.3] lato-bold text-center mt-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus
-          gravida.
+          We are committed to providing our customers with the highest level of
+          quality and satisfaction.
         </p>
       </div>
       <div className="max-w-[270px] flex flex-col items-center bg-white px-7 pb-11 pt-14 shadow">
@@ -63,8 +62,8 @@ export function Features() {
           24/7 Support
         </h3>
         <p className="text-base text-[#1a0b5b]/[.3] lato-bold text-center mt-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus
-          gravida.
+          Our team is dedicated to providing 24/7 support to ensure that you
+          have access to help whenever you need it.
         </p>
       </div>
     </div>
