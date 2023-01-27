@@ -2,19 +2,19 @@ import fetch from "cross-fetch";
 import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
 
-import { Page } from "../components/layout/page/page";
-import { HomePageStart } from "../components/home/homepage-start";
-import { HomePageContent } from "../components/home/homepage-content";
-import { HomePageFeaturedProduct } from "../components/home/homepage-featured-product";
-import { HomePageLatestProduct } from "../components/home/homepage-latest-product";
-import { HomePageOffer } from "../components/home/homepage-offer";
-import { HomePageUnique } from "../components/home/homepage-unique";
-import { HomePageTrendingProducts } from "../components/home/homepage-trending-product";
-import { HomePageDiscount } from "../components/home/homepage-discount";
-import { HomePageCategories } from "../components/home/homepage-categories";
-import { HomePageNewslater } from "../components/home/homepage-newslater";
-import { Sponsor } from "../components/sponsor";
-import { HomePageLeatestBlog } from "../components/home/homepage-leatest-blog";
+import { Page } from "@/components/layout/page/page";
+import { HomePageStart } from "@/components/home/homepage-start";
+import { HomePageContent } from "@/components/home/homepage-content";
+import { HomePageFeaturedProduct } from "@/components/home/homepage-featured-product";
+import { HomePageLatestProduct } from "@/components/home/homepage-latest-product";
+import { HomePageOffer } from "@/components/home/homepage-offer";
+import { HomePageUnique } from "@/components/home/homepage-unique";
+import { HomePageTrendingProducts } from "@/components/home/homepage-trending-product";
+import { HomePageDiscount } from "@/components/home/homepage-discount";
+import { HomePageCategories } from "@/components/home/homepage-categories";
+import { HomePageNewslater } from "@/components/home/homepage-newslater";
+import { Sponsor } from "@/components/sponsor";
+import { HomePageLeatestBlog } from "@/components/home/homepage-leatest-blog";
 
 export default function Home({
   featuredProducts,
