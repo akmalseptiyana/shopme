@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 import { withTax } from "@/lib/withTax";
 
-export type Product = {
+type Product = {
   id: number;
   title: string;
   image: string;
@@ -102,7 +102,6 @@ const cartSlice = createSlice({
           state.totals = withTax(state.subTotals);
         } else {
           state.totalQuantity = 0;
-          state.subTotals = 0;
           state.subTotals = 0;
           state.totals = 0;
         }
