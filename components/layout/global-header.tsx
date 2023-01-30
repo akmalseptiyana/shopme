@@ -7,11 +7,9 @@ import { Container } from "@/components/ui/container";
 import { RootState } from "@/store/store";
 
 export function GlobalHeader() {
-  const cartItems: any = useSelector<RootState>(
-    (state) => state.cart.itemsList
-  );
-  const totalQuantity: any = useSelector<RootState>(
-    (state) => state.cart.totalQuantity
+  const cartItems = useSelector((state: RootState) => state.cart.itemsList);
+  const totalQuantity = useSelector(
+    (state: RootState) => state.cart.totalQuantity
   );
 
   return (

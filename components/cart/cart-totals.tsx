@@ -12,11 +12,9 @@ export function CartTotals() {
   const [disabled, setDisabled] = useState(true);
 
   const dispatch = useDispatch<AppDispatch>();
-  const subTotals = useSelector<RootState>((state) => state.cart.subTotals);
-  const totals = useSelector<RootState>((state) => state.cart.totals);
-  const cartItems: any = useSelector<RootState>(
-    (state) => state.cart.itemsList
-  );
+  const cartItems = useSelector((state: RootState) => state.cart.itemsList);
+  const subTotals = useSelector((state: RootState) => state.cart.subTotals);
+  const totals = useSelector((state: RootState) => state.cart.totals);
 
   function handleTax(e: ChangeEvent<HTMLInputElement>) {
     const isChecked = e.target.checked;
@@ -56,7 +54,7 @@ export function CartTotals() {
             Totals:
           </h4>
           <span className="text-base text-[#15245E] lato-regular">
-            ${totals.toFixed(2)}
+            ${disabled ? subTotals.toFixed(2) : totals.toFixed(2)}
           </span>
         </div>
         <FormGroup className="items-center gap-x-2 mt-7">

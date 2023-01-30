@@ -12,13 +12,10 @@ import {
   removeFromCart,
 } from "@/store/slices/cartSlice";
 import { PrimaryButton } from "@/components/ui/button/primary-button";
-import { Product } from "@/store/slices/cartSlice";
 
 export function ShoppingCart() {
   const dispatch = useDispatch<AppDispatch>();
-  const cartItems: any = useSelector<RootState>(
-    (state) => state.cart.itemsList
-  );
+  const cartItems = useSelector((state: RootState) => state.cart.itemsList);
 
   return (
     <div className="flex-auto max-w-[800px]">
@@ -43,7 +40,7 @@ export function ShoppingCart() {
             </Link>
           </p>
         ) : (
-          cartItems.map((product: Product) => {
+          cartItems.map((product) => {
             return (
               <div
                 key={product.id}
