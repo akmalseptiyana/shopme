@@ -28,9 +28,9 @@ export function HomePageCategories<
                   style={{ objectFit: "contain" }}
                 />
               </figure>
-              <div className="w-[150px]">
+              <div className="w-[270px]">
                 <h3
-                  className="text-xl text-navy-blue josefin-regular mt-6 truncate"
+                  className="text-xl text-navy-blue text-center josefin-regular mt-6"
                   title={product.title}
                 >
                   {product.title}
