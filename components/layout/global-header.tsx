@@ -1,12 +1,18 @@
 import clsx from "clsx";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 import { dataLeft, dataRight } from "@/constans/header-data";
 import { Container } from "@/components/ui/container";
-import { useCart } from "@/lib/hooks/cart-context";
+import { RootState } from "@/store/store";
 
 export function GlobalHeader() {
-  const { state } = useCart();
+  const cartItems: any = useSelector<RootState>(
+    (state) => state.cart.itemsList
+  );
+  const totalQuantity: any = useSelector<RootState>(
+    (state) => state.cart.totalQuantity
+  );
 
   return (
     <header className="bg-purple-primary py-[14px]">
@@ -68,10 +74,18 @@ export function GlobalHeader() {
               <g
                 className={clsx(
                   "text-pink-primary",
-                  Object.keys(state.cart).length > 0 ? "block" : "hidden"
+                  cartItems.length > 0 ? "block" : "hidden"
                 )}
               >
-                <circle cx="22" cy="5" r="4" className="dot" fill="#FB2E86" />
+                <circle cx="22" cy="8" r="7" fill="#FB2E86" />
+                <text
+                  x={totalQuantity < 10 ? "62%" : "52%"}
+                  y="50%"
+                  strokeWidth="1px"
+                  className="text-white text-[10px] font-lato"
+                >
+                  {totalQuantity}
+                </text>
               </g>
             </svg>
           </Link>

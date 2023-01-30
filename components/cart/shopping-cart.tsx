@@ -1,13 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
+import { useDispatch, useSelector } from "react-redux";
 import { XCircleIcon } from "@heroicons/react/24/solid";
 
+import { AppDispatch, RootState } from "@/store/store";
+import {
+  incrementQuantity,
+  decrementQuantity,
+  resetCart,
+  removeFromCart,
+} from "@/store/slices/cartSlice";
 import { PrimaryButton } from "@/components/ui/button/primary-button";
-import { Product, useCart } from "@/lib/hooks/cart-context";
+import { Product } from "@/store/slices/cartSlice";
 
 export function ShoppingCart() {
-  const { state, dispatch } = useCart();
+  const dispatch = useDispatch<AppDispatch>();
+  const cartItems: any = useSelector<RootState>(
+    (state) => state.cart.itemsList
+  );
 
   return (
     <div className="flex-auto max-w-[800px]">
@@ -24,7 +35,7 @@ export function ShoppingCart() {
         </h3>
       </div>
       <div className="space-y-4 mt-12">
-        {Object.keys(state.cart).length === 0 ? (
+        {cartItems.length === 0 ? (
           <p className="text-base text-[#A1A8C1] lato-regular text-center">
             Cart empty.{" "}
             <Link href="/products" className="underline">
@@ -32,8 +43,7 @@ export function ShoppingCart() {
             </Link>
           </p>
         ) : (
-          Object.keys(state.cart)?.map((key) => {
-            const product: Product = state.cart[key as keyof typeof state.cart];
+          cartItems.map((product: Product) => {
             return (
               <div
                 key={product.id}
@@ -52,9 +62,7 @@ export function ShoppingCart() {
                     />
                     <XCircleIcon
                       className="w-6 h-6 text-black absolute -top-2 -right-2 cursor-pointer"
-                      onClick={() =>
-                        dispatch({ type: "REMOVE_FROM_CART", id: product.id })
-                      }
+                      onClick={() => dispatch(removeFromCart(product.id))}
                     />
                   </figure>
                   <div className="hidden md:block">
@@ -68,9 +76,7 @@ export function ShoppingCart() {
                   <div className="flex items-center justify-self-center md:hidden">
                     <button
                       className="flex items-center justify-center text-[#BEBFC2] w-6 h-6 bg-[#E7E7EF]"
-                      onClick={() =>
-                        dispatch({ type: "DECREMENT_QUANTITY", id: product.id })
-                      }
+                      onClick={() => dispatch(decrementQuantity(product.id))}
                     >
                       -
                     </button>
@@ -79,9 +85,7 @@ export function ShoppingCart() {
                     </span>
                     <button
                       className="flex items-center justify-center text-[#BEBFC2] w-6 h-6 bg-[#E7E7EF]"
-                      onClick={() =>
-                        dispatch({ type: "INCREMENT_QUANTITY", id: product.id })
-                      }
+                      onClick={() => dispatch(incrementQuantity(product.id))}
                     >
                       +
                     </button>
@@ -98,15 +102,13 @@ export function ShoppingCart() {
                     ${product.price}
                   </h4>
                   <h4 className="md:hidden text-base text-[#15245E] josefin-regular mt-2 md:mt-0">
-                    ${(product.price * product.quantity).toFixed(2)}
+                    ${product.totalPrice.toFixed(2)}
                   </h4>
                 </div>
                 <div className="hidden md:flex items-center justify-self-center">
                   <button
                     className="flex items-center justify-center text-[#BEBFC2] w-6 h-6 bg-[#E7E7EF]"
-                    onClick={() =>
-                      dispatch({ type: "DECREMENT_QUANTITY", id: product.id })
-                    }
+                    onClick={() => dispatch(decrementQuantity(product.id))}
                   >
                     -
                   </button>
@@ -115,16 +117,14 @@ export function ShoppingCart() {
                   </span>
                   <button
                     className="flex items-center justify-center text-[#BEBFC2] w-6 h-6 bg-[#E7E7EF]"
-                    onClick={() =>
-                      dispatch({ type: "INCREMENT_QUANTITY", id: product.id })
-                    }
+                    onClick={() => dispatch(incrementQuantity(product.id))}
                   >
                     +
                   </button>
                 </div>
                 <div className="justify-self-end hidden md:block">
                   <h4 className="text-base text-[#15245E] josefin-regular">
-                    ${(product.price * product.quantity).toFixed(2)}
+                    ${product.totalPrice.toFixed(2)}
                   </h4>
                 </div>
               </div>
@@ -136,13 +136,13 @@ export function ShoppingCart() {
       <div
         className={clsx(
           "text-end",
-          Object.keys(state.cart).length === 0 ? "hidden" : "block"
+          cartItems.length === 0 ? "hidden" : "block"
         )}
       >
         <PrimaryButton
           type="button"
           className="py-3 px-7 josefin-semibold mt-12"
-          onClick={() => dispatch({ type: "RESET_CART" })}
+          onClick={() => dispatch(resetCart("RESET_CART"))}
         >
           Clear Cart
         </PrimaryButton>

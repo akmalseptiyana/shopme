@@ -1,44 +1,39 @@
 import { ChangeEvent, useState } from "react";
 import Router from "next/router";
+import { useSelector, useDispatch } from "react-redux";
 
+import { AppDispatch, RootState } from "@/store/store";
+import { calculateTax, resetCart, resetTax } from "@/store/slices/cartSlice";
 import { FormGroup } from "@/components/ui/form/form-group";
 import { InputCheckbox } from "@/components/ui/form/input-checkbox";
 import { PrimaryButton } from "@/components/ui/button/primary-button";
-import { Product, useCart } from "@/lib/hooks/cart-context";
 
 export function CartTotals() {
-  const [calculateTax, setCalculateTax] = useState(false);
   const [disabled, setDisabled] = useState(true);
-  const { state, dispatch } = useCart();
 
-  const tax = 10;
-  const subTotal: number = +Object.keys(state.cart)
-    ?.reduce((prev, key) => {
-      const product: Product = state.cart[key as keyof typeof state.cart];
-      prev += product.price * product.quantity;
-      return prev;
-    }, 0)
-    .toFixed(2);
-  let total = ((subTotal * tax) / 100 + Number(subTotal)).toFixed(2);
+  const dispatch = useDispatch<AppDispatch>();
+  const subTotals = useSelector<RootState>((state) => state.cart.subTotals);
+  const totals = useSelector<RootState>((state) => state.cart.totals);
+  const cartItems: any = useSelector<RootState>(
+    (state) => state.cart.itemsList
+  );
 
-  function handleCheckbox(e: ChangeEvent<HTMLInputElement>) {
+  function handleTax(e: ChangeEvent<HTMLInputElement>) {
     const isChecked = e.target.checked;
 
-    if (isChecked) {
-      setCalculateTax(true);
-      if (Object.keys(state.cart).length > 0) {
-        setDisabled(false);
-      }
+    if (isChecked && cartItems.length > 0) {
+      dispatch(calculateTax("CALCULATE_TAX"));
+      setDisabled(false);
     } else {
-      setCalculateTax(false);
+      dispatch(resetTax("RESET_TAX"));
       setDisabled(true);
     }
   }
 
   function handleSubmit() {
-    if (calculateTax && Object.keys(state.cart).length > 0) {
+    if (!disabled) {
       Router.push("/completed");
-      dispatch({ type: "RESET_CART" });
+      dispatch(resetCart("RESET_CART"));
     }
   }
 
@@ -53,7 +48,7 @@ export function CartTotals() {
             Subtotals:
           </h4>
           <span className="text-base text-[#15245E] lato-regular">
-            ${subTotal}
+            ${subTotals.toFixed(2)}
           </span>
         </div>
         <div className="flex items-center border-b-2 border-[#E8E6F1] pb-3 mt-8">
@@ -61,11 +56,11 @@ export function CartTotals() {
             Totals:
           </h4>
           <span className="text-base text-[#15245E] lato-regular">
-            ${calculateTax ? total : subTotal}
+            ${totals.toFixed(2)}
           </span>
         </div>
         <FormGroup className="items-center gap-x-2 mt-7">
-          <InputCheckbox onChange={(e) => handleCheckbox(e)} />
+          <InputCheckbox onChange={(e) => handleTax(e)} />
           <label
             htmlFor="checkout"
             className="text-sm text-[#8A91AB] lato-regular"

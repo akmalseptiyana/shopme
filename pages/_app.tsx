@@ -1,12 +1,13 @@
 import "@/styles/globals.css";
 import "nprogress/nprogress.css";
 
-import { useEffect } from "react";
 import type { AppProps } from "next/app";
-
+import { useEffect } from "react";
+import { Provider } from "react-redux";
 import NProgress from "nprogress";
+
 import { Layout } from "@/components/layout";
-import { CartProvider } from "@/lib/hooks/cart-context";
+import store from "@/store/store";
 
 export const progress = NProgress.configure({
   showSpinner: false,
@@ -33,11 +34,11 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   }, []);
 
   return (
-    <CartProvider>
+    <Provider store={store}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </CartProvider>
+    </Provider>
   );
 }
 

@@ -1,16 +1,18 @@
 import Image from "next/image";
+import { useDispatch } from "react-redux";
 import {
   ShoppingCartIcon,
   HeartIcon,
   MagnifyingGlassPlusIcon,
 } from "@heroicons/react/24/outline";
 
-import { useCart } from "@/lib/hooks/cart-context";
+import { addToCart } from "@/store/slices/cartSlice";
 import { Rating } from "@/components/ui/rating";
 import { ProductProps } from "./utils/type";
+import { AppDispatch } from "@/store/store";
 
 export function ListView({ products }: ProductProps) {
-  const { dispatch } = useCart();
+  const dispatch = useDispatch<AppDispatch>();
 
   return (
     <div className="flex flex-col gap-y-8 mt-24">
@@ -52,9 +54,7 @@ export function ListView({ products }: ProductProps) {
                 <li>
                   <button
                     className="w-8 h-8 rounded-full flex items-center justify-center shadow"
-                    onClick={() =>
-                      dispatch({ type: "ADD_TO_CART", item: product })
-                    }
+                    onClick={() => dispatch(addToCart(product))}
                   >
                     <ShoppingCartIcon className="w-5 h-5 text-[#535399]" />
                   </button>

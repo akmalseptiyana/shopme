@@ -1,14 +1,16 @@
 import Image from "next/image";
+import { useDispatch } from "react-redux";
 import { HeartIcon } from "@heroicons/react/24/outline";
 
 import { PrimaryButton } from "@/components/ui/button/primary-button";
 import { SocialIcons } from "@/components/ui/social-icons";
 import { Rating } from "@/components/ui/rating";
-import { useCart } from "@/lib/hooks/cart-context";
 import { Props } from "./utils/type";
+import { AppDispatch } from "@/store/store";
+import { addToCart } from "@/store/slices/cartSlice";
 
 export function CardProductDetails({ data }: Props) {
-  const { dispatch } = useCart();
+  const dispatch = useDispatch<AppDispatch>();
 
   return (
     <div className="flex flex-wrap items-center gap-x-10 gap-y-8 bg-white py-8 lg:py-3 px-4 max-w-[1170px] rounded-sm shadow">
@@ -42,7 +44,7 @@ export function CardProductDetails({ data }: Props) {
           <PrimaryButton
             type="button"
             className="py-4 px-7 josefin-regular"
-            onClick={() => dispatch({ type: "ADD_TO_CART", item: data })}
+            onClick={() => dispatch(addToCart(data))}
           >
             Add To Cart
           </PrimaryButton>
