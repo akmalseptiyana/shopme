@@ -40,7 +40,7 @@ export default function ProductDetails({
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { id } = context.params;
+  const id = context.params?.id as string;
 
   const res = await fetch(`${process.env.BASE_URL}/products/${id}`);
   const data = await res.json();
