@@ -22,7 +22,7 @@ export function RelatedProducts({ data }: Props) {
     fetch(`${process.env.BASE_URL}/products/category/${data.category}`)
       .then((res) => res.json())
       .then((data) => setRelatedProducts(data));
-  }, []);
+  }, [data.category]);
 
   return (
     <div className="mt-32">

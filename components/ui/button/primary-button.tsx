@@ -41,3 +41,5 @@ export const PrimaryButton = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
+
+PrimaryButton.displayName = "PrimaryButton";

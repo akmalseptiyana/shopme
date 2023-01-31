@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       router.events.off("routeChangeComplete", handleStop);
       router.events.off("routeChangeError", handleStop);
     };
-  }, []);
+  }, [router.events]);
 
   return (
     <Provider store={store}>
