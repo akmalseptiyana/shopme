@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import { useGetProductsQuery } from "@/store/services/fakeStore";
 import { ProductItem } from "./utils/type";
 
 export function GridView() {
-  const { data, isLoading } = useGetProductsQuery();
+  const router = useRouter();
+  const result = useGetProductsQuery({ skip: router.isFallback });
+  const { data, isLoading } = result;
 
   if (isLoading) {
     return <h1>Loading...</h1>;
