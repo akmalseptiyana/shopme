@@ -1,7 +1,5 @@
 import Head from "next/head";
-import fetch from "cross-fetch";
 import { useState } from "react";
-import { InferGetStaticPropsType } from "next";
 
 import { Page } from "@/components/layout/page/page";
 import { Container } from "@/components/ui/container";
@@ -13,9 +11,11 @@ import { Sponsor } from "@/components/sponsor";
 import { GridView } from "@/components/products/grid-view";
 import { ListView } from "@/components/products/list-view";
 
-export default function Products({
-  products,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+import { getProducts } from "@/store/services/fakeStore";
+import { wrapper } from "@/store/store";
+import { getRunningQueriesThunk } from "@/store/services/fakeStore";
+
+export default function Products() {
   const [view, setView] = useState<boolean>(true);
 
   return (
@@ -33,11 +33,7 @@ export default function Products({
         <Container>
           <InternalPageSection className="mt-32">
             <SortBy view={view} setView={setView} />
-            {view ? (
-              <GridView products={products} />
-            ) : (
-              <ListView products={products} />
-            )}
+            {view ? <GridView /> : <ListView />}
           </InternalPageSection>
           <Sponsor className="mt-20" />
         </Container>
@@ -46,11 +42,13 @@ export default function Products({
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch(`${process.env.BASE_URL}/products`);
-  const products = await res.json();
+export const getStaticProps = wrapper.getStaticProps(
+  (store: any) => async () => {
+    store.dispatch(getProducts.initiate());
+    await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
-  return {
-    props: { products },
-  };
-}
+    return {
+      props: {},
+    };
+  }
+);

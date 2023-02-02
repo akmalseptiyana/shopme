@@ -1,12 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { ProductProps } from "./utils/type";
+import { useGetProductsQuery } from "@/store/services/fakeStore";
+import { ProductItem } from "./utils/type";
 
-export function GridView({ products }: ProductProps) {
+export function GridView() {
+  const { data, isLoading } = useGetProductsQuery();
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-items-center gap-x-14 gap-y-20 mt-36">
-      {products?.map(({ id, title, price, image }) => {
+      {data?.map(({ id, title, price, image }: ProductItem) => {
         return (
           <div key={id} className="relative max-w-[270px]">
             <figure className="relative w-[270px] h-[280px] bg-white">

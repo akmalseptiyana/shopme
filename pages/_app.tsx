@@ -7,13 +7,15 @@ import { Provider } from "react-redux";
 import NProgress from "nprogress";
 
 import { Layout } from "@/components/layout";
-import store from "@/store/store";
+import { wrapper } from "@/store/store";
 
 export const progress = NProgress.configure({
   showSpinner: false,
 });
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+function MyApp({ Component, pageProps, router, ...rest }: AppProps) {
+  const { store } = wrapper.useWrappedStore(rest);
+
   useEffect(() => {
     const handleStart = () => {
       progress.start();

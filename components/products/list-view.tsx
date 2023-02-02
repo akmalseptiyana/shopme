@@ -11,7 +11,7 @@ import { Rating } from "@/components/ui/rating";
 import { ProductProps } from "./utils/type";
 import { AppDispatch } from "@/store/store";
 
-export function ListView({ products }: ProductProps) {
+export function ListView() {
   const dispatch = useDispatch<AppDispatch>();
 
   return (
