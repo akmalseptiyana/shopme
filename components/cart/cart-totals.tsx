@@ -1,12 +1,13 @@
-import { ChangeEvent, useState } from "react";
 import Router from "next/router";
-import { useSelector, useDispatch } from "react-redux";
+import { ChangeEvent, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { AppDispatch, RootState } from "@/store/store";
-import { calculateTax, resetCart, resetTax } from "@/store/slices/cartSlice";
+import { PrimaryButton } from "@/components/ui/button/primary-button";
 import { FormGroup } from "@/components/ui/form/form-group";
 import { InputCheckbox } from "@/components/ui/form/input-checkbox";
-import { PrimaryButton } from "@/components/ui/button/primary-button";
+
+import { calculateTax, resetCart, resetTax } from "@/store/slices/cartSlice";
+import { AppDispatch, RootState } from "@/store/store";
 
 export function CartTotals() {
   const [disabled, setDisabled] = useState(true);
@@ -37,31 +38,31 @@ export function CartTotals() {
 
   return (
     <div>
-      <h3 className="text-xl text-[#1D3178] josefin-bold text-center">
+      <h3 className="josefin-bold text-center text-xl text-[#1D3178]">
         Cart Totals
       </h3>
-      <div className="w-full lg:w-[374px] h-[284px] bg-[#F4F4FC] py-8 px-7 rounded-[3px] mt-10">
+      <div className="mt-10 h-[284px] w-full rounded-[3px] bg-[#F4F4FC] py-8 px-7 lg:w-[374px]">
         <div className="flex items-center border-b-2 border-[#E8E6F1] pb-3">
-          <h4 className="text-lg text-[#1D3178] josefin-semibold flex-1">
+          <h4 className="josefin-semibold flex-1 text-lg text-[#1D3178]">
             Subtotals:
           </h4>
-          <span className="text-base text-[#15245E] lato-regular">
+          <span className="lato-regular text-base text-[#15245E]">
             ${subTotals.toFixed(2)}
           </span>
         </div>
-        <div className="flex items-center border-b-2 border-[#E8E6F1] pb-3 mt-8">
-          <h4 className="text-lg text-[#1D3178] josefin-semibold flex-1">
+        <div className="mt-8 flex items-center border-b-2 border-[#E8E6F1] pb-3">
+          <h4 className="josefin-semibold flex-1 text-lg text-[#1D3178]">
             Totals:
           </h4>
-          <span className="text-base text-[#15245E] lato-regular">
+          <span className="lato-regular text-base text-[#15245E]">
             ${disabled ? subTotals.toFixed(2) : totals.toFixed(2)}
           </span>
         </div>
-        <FormGroup className="items-center gap-x-2 mt-7">
+        <FormGroup className="mt-7 items-center gap-x-2">
           <InputCheckbox onChange={(e) => handleTax(e)} />
           <label
             htmlFor="checkout"
-            className="text-sm text-[#8A91AB] lato-regular"
+            className="lato-regular text-sm text-[#8A91AB]"
           >
             Shipping & taxes calculated at checkout
           </label>
@@ -69,7 +70,7 @@ export function CartTotals() {
         <PrimaryButton
           type="button"
           color="bg-[#19D16F]"
-          className="w-full py-3 lato-bold mt-8 disabled:bg-gray-300 disabled:cursor-not-allowed"
+          className="lato-bold mt-8 w-full py-3 disabled:cursor-not-allowed disabled:bg-gray-300"
           disabled={disabled}
           onClick={() => handleSubmit()}
         >

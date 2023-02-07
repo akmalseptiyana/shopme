@@ -1,4 +1,5 @@
 import { Features } from "@/components/features";
+
 import { HomepageSection } from "./homepage-section";
 
 export function HomePageOffer() {

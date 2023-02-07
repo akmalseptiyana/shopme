@@ -1,11 +1,11 @@
-import { ComponentType, SVGProps } from "react";
 import {
-  EnvelopeIcon,
-  PhoneArrowUpRightIcon,
   ChevronDownIcon,
-  UserIcon,
+  EnvelopeIcon,
   HeartIcon,
+  PhoneArrowUpRightIcon,
+  UserIcon,
 } from "@heroicons/react/24/outline";
+import { ComponentType, SVGProps } from "react";
 
 type DataLeftItem = {
   icon: ComponentType<SVGProps<SVGSVGElement>>;

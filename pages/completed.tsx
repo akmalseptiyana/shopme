@@ -1,12 +1,12 @@
-import Link from "next/link";
 import Head from "next/head";
+import Link from "next/link";
 
-import { Page } from "@/components/layout/page/page";
-import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
 import { InternalPageContent } from "@/components/layout/page/internal-page-content";
+import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
 import { InternalPageSection } from "@/components/layout/page/internal-page-section";
-import { Container } from "@/components/ui/container";
+import { Page } from "@/components/layout/page/page";
 import { Sponsor } from "@/components/sponsor";
+import { Container } from "@/components/ui/container";
 
 export default function Completed() {
   return (
@@ -22,8 +22,8 @@ export default function Completed() {
       />
       <InternalPageContent>
         <Container>
-          <InternalPageSection className="relative text-center mt-48">
-            <div className="max-w-[625px] mx-auto">
+          <InternalPageSection className="relative mt-48 text-center">
+            <div className="mx-auto max-w-[625px]">
               <figure className="flex justify-center">
                 <svg
                   width="89"
@@ -45,17 +45,17 @@ export default function Completed() {
                   />
                 </svg>
               </figure>
-              <h2 className="text-4xl text-[#101750] josefin-bold mt-6">
+              <h2 className="josefin-bold mt-6 text-4xl text-[#101750]">
                 Your Order Is Completed!
               </h2>
-              <p className="text-base text-[#8D92A7] lato-regular mt-7">
+              <p className="lato-regular mt-7 text-base text-[#8D92A7]">
                 Thank you for your order! Your order is being processed and will
                 be completed within 3-6 hours. You will receive an email
                 confirmation when your order is completed.
               </p>
               <Link
                 href="/"
-                className="inline-block leading-none text-base text-white rounded-sm py-4 px-9 lato-bold bg-pink-primary mt-12"
+                className="lato-bold mt-12 inline-block rounded-sm bg-pink-primary py-4 px-9 text-base leading-none text-white"
               >
                 Back To Home
               </Link>

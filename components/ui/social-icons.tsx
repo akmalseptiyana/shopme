@@ -12,8 +12,8 @@ export function SocialIcons({ className, center }: SocialIconsProps) {
     >
       <li
         className={clsx(
-          "w-8 h-8 rounded-full flex items-center justify-center",
-          className
+          "flex h-8 w-8 items-center justify-center rounded-full",
+          className,
         )}
       >
         <svg
@@ -28,8 +28,8 @@ export function SocialIcons({ className, center }: SocialIconsProps) {
       </li>
       <li
         className={clsx(
-          "w-8 h-8 rounded-full flex items-center justify-center",
-          className
+          "flex h-8 w-8 items-center justify-center rounded-full",
+          className,
         )}
       >
         <svg
@@ -45,8 +45,8 @@ export function SocialIcons({ className, center }: SocialIconsProps) {
       </li>
       <li
         className={clsx(
-          "w-8 h-8 rounded-full flex items-center justify-center",
-          className
+          "flex h-8 w-8 items-center justify-center rounded-full",
+          className,
         )}
       >
         <svg

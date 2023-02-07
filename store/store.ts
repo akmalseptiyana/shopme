@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 
-import cartReducer from "@/store/slices/cartSlice";
 import { fakeStoreApi } from "@/store/services/fakeStore";
+import cartReducer from "@/store/slices/cartSlice";
 
 const store = () =>
   configureStore({

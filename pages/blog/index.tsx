@@ -1,14 +1,14 @@
-import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
+import Head from "next/head";
 
-import { Page } from "@/components/layout/page/page";
-import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
-import { InternalPageContent } from "@/components/layout/page/internal-page-content";
-import { InternalPageSection } from "@/components/layout/page/internal-page-section";
-import { Container } from "@/components/ui/container";
-import { BlogContent } from "@/components/blog/blog-content";
 import { BlogAside } from "@/components/blog/blog-aside";
+import { BlogContent } from "@/components/blog/blog-content";
+import { InternalPageContent } from "@/components/layout/page/internal-page-content";
+import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
+import { InternalPageSection } from "@/components/layout/page/internal-page-section";
+import { Page } from "@/components/layout/page/page";
 import { Sponsor } from "@/components/sponsor";
+import { Container } from "@/components/ui/container";
 
 export default function Blog({
   data,
@@ -28,7 +28,7 @@ export default function Blog({
       />
       <InternalPageContent>
         <Container>
-          <InternalPageSection className="flex flex-wrap gap-x-14 gap-y-20 mt-32">
+          <InternalPageSection className="mt-32 flex flex-wrap gap-x-14 gap-y-20">
             <BlogContent data={data} />
             <BlogAside data={{ recentPost, saleProduct }} />
           </InternalPageSection>
@@ -41,15 +41,15 @@ export default function Blog({
 
 export async function getStaticProps() {
   const res = await fetch(
-    `${process.env.BLOG_URL}/everything?apiKey=${process.env.API_KEY}&q=apple&language=en&pageSize=5`
+    `${process.env.BLOG_URL}/everything?apiKey=${process.env.API_KEY}&q=apple&language=en&pageSize=5`,
   );
 
   const resRecentPost = await fetch(
-    `${process.env.BLOG_URL}/everything?apiKey=${process.env.API_KEY}&q=nvidia&language=en&pageSize=4`
+    `${process.env.BLOG_URL}/everything?apiKey=${process.env.API_KEY}&q=nvidia&language=en&pageSize=4`,
   );
 
   const resSaleProduct = await fetch(
-    `${process.env.BLOG_URL}/everything?apiKey=${process.env.API_KEY}&q=sale product&language=en&pageSize=3`
+    `${process.env.BLOG_URL}/everything?apiKey=${process.env.API_KEY}&q=sale product&language=en&pageSize=3`,
   );
 
   const data = await res.json();

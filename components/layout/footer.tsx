@@ -1,30 +1,32 @@
 import { PrimaryButton } from "@/components/ui/button/primary-button";
 import { FormGroup } from "@/components/ui/form/form-group";
 import { InputText } from "@/components/ui/form/input-text";
+
 import { footer } from "@/constans/footer-data";
+
 import { FooterCopy } from "./footer-copy";
 
 export function Footer() {
   return (
-    <footer className="bg-shade pt-24 mt-28">
+    <footer className="mt-28 bg-shade pt-24">
       <div className="container flex flex-wrap gap-x-28 gap-y-10">
         <div>
-          <h3 className="text-4xl text-[#0D0E43] josefin-bold">Shopme</h3>
-          <FormGroup className="relative items-center max-w-[377px] mt-8">
+          <h3 className="josefin-bold text-4xl text-[#0D0E43]">Shopme</h3>
+          <FormGroup className="relative mt-8 max-w-[377px] items-center">
             <InputText
               type="email"
-              className=" w-full md:w-[377px] h-11 bg-white rounded-[3px] outline-none pl-5"
+              className=" h-11 w-full rounded-[3px] bg-white pl-5 outline-none md:w-[377px]"
               placeholder="Enter Email Address"
               style={{ border: 0 }}
             />
             <PrimaryButton
               type="submit"
-              className="py-3 px-10 josefin-semibold absolute right-0"
+              className="josefin-semibold absolute right-0 py-3 px-10"
             >
               Sign Up
             </PrimaryButton>
           </FormGroup>
-          <p className="text-base text-[#8A8FB9] lato-regular pr-4 mt-6">
+          <p className="lato-regular mt-6 pr-4 text-base text-[#8A8FB9]">
             Contact Info <br /> 17 Princess Road, London, Greater London NW1
             8JR, UK
           </p>
@@ -32,14 +34,14 @@ export function Footer() {
         {footer?.map((item, index) => {
           return (
             <div key={index}>
-              <h4 className="text-black text-xl josefin-semibold">
+              <h4 className="josefin-semibold text-xl text-black">
                 {item.heading}
               </h4>
               <ul className="mt-10 space-y-5">
                 {item.lists.map((list, index) => (
                   <li
                     key={index}
-                    className="text-[#8A8FB9] text-base lato-regular"
+                    className="lato-regular text-base text-[#8A8FB9]"
                   >
                     {list}
                   </li>

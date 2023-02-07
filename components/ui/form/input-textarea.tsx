@@ -1,5 +1,5 @@
-import { InputHTMLAttributes } from "react";
 import clsx from "clsx";
+import { InputHTMLAttributes } from "react";
 
 type InputTextareaProps = {
   className?: string;
@@ -16,8 +16,8 @@ export function InputTextarea({
   return (
     <textarea
       className={clsx(
-        "text-base lato-regular border border-[#A4B6C8]/70 rounded-[3px] outline-none w-full",
-        className
+        "lato-regular w-full rounded-[3px] border border-[#A4B6C8]/70 text-base outline-none",
+        className,
       )}
       rows={rows}
       placeholder={placeholder}

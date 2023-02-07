@@ -1,19 +1,19 @@
 import Head from "next/head";
 import { useState } from "react";
 
-import { Page } from "@/components/layout/page/page";
-import { Container } from "@/components/ui/container";
-import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
 import { InternalPageContent } from "@/components/layout/page/internal-page-content";
+import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
 import { InternalPageSection } from "@/components/layout/page/internal-page-section";
-import { SortBy } from "@/components/sort-by";
-import { Sponsor } from "@/components/sponsor";
+import { Page } from "@/components/layout/page/page";
 import { GridView } from "@/components/products/grid-view";
 import { ListView } from "@/components/products/list-view";
+import { SortBy } from "@/components/sort-by";
+import { Sponsor } from "@/components/sponsor";
+import { Container } from "@/components/ui/container";
 
 import { getProducts } from "@/store/services/fakeStore";
-import { wrapper } from "@/store/store";
 import { getRunningQueriesThunk } from "@/store/services/fakeStore";
+import { wrapper } from "@/store/store";
 
 export default function Products() {
   const [view, setView] = useState<boolean>(true);
@@ -42,13 +42,11 @@ export default function Products() {
   );
 }
 
-export const getStaticProps = wrapper.getStaticProps(
-  (store: any) => async () => {
-    store.dispatch(getProducts.initiate());
-    await Promise.all(store.dispatch(getRunningQueriesThunk()));
+export const getStaticProps = wrapper.getStaticProps((store) => async () => {
+  store.dispatch(getProducts.initiate());
+  await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
-    return {
-      props: {},
-    };
-  }
-);
+  return {
+    props: {},
+  };
+});

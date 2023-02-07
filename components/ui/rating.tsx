@@ -31,7 +31,7 @@ export function Rating({
           width: width,
           marginRight: spacing,
         }}
-      ></div>
+      ></div>,
     );
   }
 
@@ -39,13 +39,13 @@ export function Rating({
     star.push(
       <div
         className="star"
-        key={`starWithDecimal`}
+        key="starWithDecimal"
         style={{
           left: leftPos,
           height: height,
           width: decimals * width - spacing,
         }}
-      ></div>
+      ></div>,
     );
   }
 
@@ -61,7 +61,7 @@ export function Rating({
           width: width,
           marginRight: spacing,
         }}
-      ></div>
+      ></div>,
     );
   }
 

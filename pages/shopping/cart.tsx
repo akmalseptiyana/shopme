@@ -1,12 +1,12 @@
 import Head from "next/head";
 
-import { Page } from "@/components/layout/page/page";
-import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
-import { InternalPageContent } from "@/components/layout/page/internal-page-content";
-import { InternalPageSection } from "@/components/layout/page/internal-page-section";
-import { Container } from "@/components/ui/container";
-import { ShoppingCart } from "@/components/cart/shopping-cart";
 import { CartTotals } from "@/components/cart/cart-totals";
+import { ShoppingCart } from "@/components/cart/shopping-cart";
+import { InternalPageContent } from "@/components/layout/page/internal-page-content";
+import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
+import { InternalPageSection } from "@/components/layout/page/internal-page-section";
+import { Page } from "@/components/layout/page/page";
+import { Container } from "@/components/ui/container";
 
 export default function Cart() {
   return (
@@ -22,7 +22,7 @@ export default function Cart() {
       />
       <InternalPageContent>
         <Container>
-          <InternalPageSection className="flex flex-col lg:flex-row gap-20 mt-32">
+          <InternalPageSection className="mt-32 flex flex-col gap-20 lg:flex-row">
             <ShoppingCart />
             <CartTotals />
           </InternalPageSection>

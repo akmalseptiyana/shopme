@@ -5,5 +5,5 @@ type PageProps = {
 };
 
 export function Page({ children }: PageProps) {
-  return <section className="flex flex-col flex-1">{children}</section>;
+  return <section className="flex flex-1 flex-col">{children}</section>;
 }

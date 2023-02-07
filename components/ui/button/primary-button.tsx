@@ -1,36 +1,23 @@
-import { forwardRef, ReactNode } from "react";
 import clsx from "clsx";
+import { forwardRef, ReactNode } from "react";
 
 type ButtonProps = {
   className: string;
   color?: string;
   type: "button" | "submit";
-  icon?: HTMLOrSVGElement;
-  iconPosition?: "left" | "right";
   children: ReactNode;
   onClick?: () => void;
   disabled?: boolean;
 };
 
 export const PrimaryButton = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      className,
-      color = "bg-pink-primary",
-      type,
-      icon,
-      iconPosition = "left",
-      children,
-      ...rest
-    },
-    ref
-  ) => {
+  ({ className, color = "bg-pink-primary", type, children, ...rest }, ref) => {
     return (
       <button
         className={clsx(
-          "leading-none text-base text-white rounded-sm",
+          "rounded-sm text-base leading-none text-white",
           color,
-          className
+          className,
         )}
         type={type}
         ref={ref}
@@ -39,7 +26,7 @@ export const PrimaryButton = forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
       </button>
     );
-  }
+  },
 );
 
 PrimaryButton.displayName = "PrimaryButton";

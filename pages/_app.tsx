@@ -1,12 +1,13 @@
+import type { AppProps } from "next/app";
+import NProgress from "nprogress";
+import { useEffect } from "react";
+import { Provider } from "react-redux";
+
 import "@/styles/globals.css";
 import "nprogress/nprogress.css";
 
-import type { AppProps } from "next/app";
-import { useEffect } from "react";
-import { Provider } from "react-redux";
-import NProgress from "nprogress";
-
 import { Layout } from "@/components/layout";
+
 import { wrapper } from "@/store/store";
 
 export const progress = NProgress.configure({

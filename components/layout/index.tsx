@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
+import { Footer } from "./footer";
 import { GlobalHeader } from "./global-header";
 import { Navigation } from "./navigation";
-import { Footer } from "./footer";
 
 type LayoutProps = {
   children: ReactNode;

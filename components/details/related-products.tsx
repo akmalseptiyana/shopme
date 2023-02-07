@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
 import fetch from "cross-fetch";
+import { useEffect, useState } from "react";
 
-import { CardProduct } from "@/components/ui/card/card-product";
-import { CardMedia } from "@/components/ui/card/card-media";
 import { CardContent } from "@/components/ui/card/card-content";
+import { CardMedia } from "@/components/ui/card/card-media";
+import { CardProduct } from "@/components/ui/card/card-product";
+
 import { Props } from "./utils/type";
 
 type RelatedProductItem = {
@@ -26,10 +27,10 @@ export function RelatedProducts({ data }: Props) {
 
   return (
     <div className="mt-32">
-      <h3 className="text-3xl md:text-4xl text-[#101750] josefin-bold">
+      <h3 className="josefin-bold text-3xl text-[#101750] md:text-4xl">
         Related Products
       </h3>
-      <div className="flex flex-wrap justify-center md:justify-start gap-x-20 gap-y-8 mt-12">
+      <div className="mt-12 flex flex-wrap justify-center gap-x-20 gap-y-8 md:justify-start">
         {relatedProducts?.map((product) => {
           return (
             <CardProduct key={product.id}>
@@ -44,12 +45,12 @@ export function RelatedProducts({ data }: Props) {
                 <div className="mt-5 max-w-[150px]">
                   <h4
                     title={product.title}
-                    className="text-base text-navy-blue josefin-semibold truncate"
+                    className="josefin-semibold truncate text-base text-navy-blue"
                   >
                     {product.title}
                   </h4>
                 </div>
-                <h5 className="text-sm text-navy-blue josefin-regular mt-3">
+                <h5 className="josefin-regular mt-3 text-sm text-navy-blue">
                   ${product.price}
                 </h5>
               </CardContent>

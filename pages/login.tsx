@@ -1,12 +1,12 @@
 import Head from "next/head";
 
-import { Page } from "@/components/layout/page/page";
-import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
 import { InternalPageContent } from "@/components/layout/page/internal-page-content";
+import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
 import { InternalPageSection } from "@/components/layout/page/internal-page-section";
-import { Container } from "@/components/ui/container";
-import { Sponsor } from "@/components/sponsor";
+import { Page } from "@/components/layout/page/page";
 import { LoginForm } from "@/components/login/login-form";
+import { Sponsor } from "@/components/sponsor";
+import { Container } from "@/components/ui/container";
 
 export default function Login() {
   return (
@@ -22,7 +22,7 @@ export default function Login() {
       />
       <InternalPageContent>
         <Container>
-          <InternalPageSection className="flex justify-center mt-32">
+          <InternalPageSection className="mt-32 flex justify-center">
             <LoginForm />
           </InternalPageSection>
 

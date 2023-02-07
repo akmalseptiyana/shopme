@@ -7,10 +7,10 @@ import client3 from "@/public/assets/images/client-3.png";
 export function OurClient() {
   return (
     <>
-      <h3 className="text-3xl md:text-4xl text-black josefin-bold text-center">
+      <h3 className="josefin-bold text-center text-3xl text-black md:text-4xl">
         Our Client Say!
       </h3>
-      <div className="flex flex-col items-center mt-16">
+      <div className="mt-16 flex flex-col items-center">
         <div className="flex items-center gap-x-3">
           <figure>
             <Image src={client1} alt="client image" quality={90} />
@@ -22,11 +22,11 @@ export function OurClient() {
             <Image src={client3} alt="client image" quality={90} />
           </figure>
         </div>
-        <h4 className="text-2xl text-navy-blue lato-bold mt-6">Selina Gomez</h4>
-        <h5 className="text-xs text-sub-text lato-regular">
+        <h4 className="lato-bold mt-6 text-2xl text-navy-blue">Selina Gomez</h4>
+        <h5 className="lato-regular text-xs text-sub-text">
           Ceo At Webecy Digital
         </h5>
-        <p className="text-base text-sub-text lato-regular text-center max-w-[689px] mx-auto mt-4">
+        <p className="lato-regular mx-auto mt-4 max-w-[689px] text-center text-base text-sub-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non duis
           ultrices quam vel dui sollicitudin aliquet id arcu. Nam vitae a enim
           nunc, sed sapien egestas ac nam. Tristique ultrices dolor aliquam

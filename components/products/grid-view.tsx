@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { useGetProductsQuery } from "@/store/services/fakeStore";
+
 import { ProductItem } from "./utils/type";
 
 export function GridView() {
@@ -15,11 +16,11 @@ export function GridView() {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-items-center gap-x-14 gap-y-20 mt-36">
+    <div className="mt-36 grid grid-cols-1 items-center justify-items-center gap-x-14 gap-y-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {data?.map(({ id, title, price, image }: ProductItem) => {
         return (
           <div key={id} className="relative max-w-[270px]">
-            <figure className="relative w-[270px] h-[280px] bg-white">
+            <figure className="relative h-[280px] w-[270px] bg-white">
               <Image
                 src={image}
                 alt={title}
@@ -30,8 +31,8 @@ export function GridView() {
               />
             </figure>
             <div className="mt-4 text-center">
-              <h3 className="text-lg text-navy-blue josefin-bold">{title}</h3>
-              <h4 className="text-sm text-navy-blue josefin-regular mt-5">
+              <h3 className="josefin-bold text-lg text-navy-blue">{title}</h3>
+              <h4 className="josefin-regular mt-5 text-sm text-navy-blue">
                 ${price}
               </h4>
             </div>

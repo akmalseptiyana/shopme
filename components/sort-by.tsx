@@ -1,10 +1,10 @@
-import React from "react";
-import clsx from "clsx";
 import { ListBulletIcon } from "@heroicons/react/24/outline";
+import clsx from "clsx";
+import React from "react";
 
 import { FormGroup } from "./ui/form/form-group";
-import { InputText } from "./ui/form/input-text";
 import { InputSelect } from "./ui/form/input-select";
+import { InputText } from "./ui/form/input-text";
 
 type Props = {
   view: boolean;
@@ -15,10 +15,10 @@ export function SortBy({ view, setView }: Props) {
   return (
     <div className="flex flex-wrap items-center justify-between gap-y-8">
       <div>
-        <h3 className="text-xl text-navy-blue josefin-bold">
+        <h3 className="josefin-bold text-xl text-navy-blue">
           Ecommerce Accesories & Fashion item
         </h3>
-        <p className="text-xs text-sub-text lato-regular mt-2">
+        <p className="lato-regular mt-2 text-xs text-sub-text">
           About 20 result (0.62 seconds)
         </p>
       </div>
@@ -46,7 +46,7 @@ export function SortBy({ view, setView }: Props) {
               height="24"
               viewBox="0 0 24 24"
               className={clsx(
-                view === true ? "fill-pink-primary" : "fill-navy-blue"
+                view === true ? "fill-pink-primary" : "fill-navy-blue",
               )}
             >
               <path d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1z"></path>
@@ -55,13 +55,13 @@ export function SortBy({ view, setView }: Props) {
           <button onClick={() => setView(false)}>
             <ListBulletIcon
               className={clsx(
-                "w-6 h-6",
-                view === false ? "text-pink-primary" : "text-navy-blue"
+                "h-6 w-6",
+                view === false ? "text-pink-primary" : "text-navy-blue",
               )}
             />
           </button>
         </FormGroup>
-        <InputText type="text" className="max-w-[162px] h-8 pl-2" />
+        <InputText type="text" className="h-8 max-w-[162px] pl-2" />
       </div>
     </div>
   );

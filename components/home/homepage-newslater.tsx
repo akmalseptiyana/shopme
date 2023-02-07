@@ -1,15 +1,16 @@
 import { PrimaryButton } from "@/components/ui/button/primary-button";
+
 import { HomepageSection } from "./homepage-section";
 
 export function HomePageNewslater() {
   return (
-    <HomepageSection className="w-full h-[462px] flex items-center bg-newslater bg-cover bg-bottom text-center mt-32">
-      <h2 className="text-3xl md:text-4xl text-navy-blue josefin-bold">
+    <HomepageSection className="mt-32 flex h-[462px] w-full items-center bg-newslater bg-cover bg-bottom text-center">
+      <h2 className="josefin-bold text-3xl text-navy-blue md:text-4xl">
         Get Leatest Update By Subscribe <br /> Our Newslater
       </h2>
       <PrimaryButton
         type="button"
-        className="josefin-regular py-4 px-8 mt-11 self-center"
+        className="josefin-regular mt-11 self-center py-4 px-8"
       >
         Subscribe
       </PrimaryButton>

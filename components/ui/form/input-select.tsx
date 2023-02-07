@@ -1,5 +1,5 @@
-import { ReactNode, InputHTMLAttributes } from "react";
 import clsx from "clsx";
+import { InputHTMLAttributes, ReactNode } from "react";
 
 type InputSelectProps = {
   className?: string;
@@ -14,8 +14,8 @@ export function InputSelect({
   return (
     <select
       className={clsx(
-        "w-full text-sub-text border border-[#E7E6EF]",
-        className
+        "w-full border border-[#E7E6EF] text-sub-text",
+        className,
       )}
       {...rest}
     >

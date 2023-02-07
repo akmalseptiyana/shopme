@@ -17,7 +17,7 @@ export function HomepageSection({
     <section className={className}>
       <Container>
         {title && (
-          <h2 className="text-3xl md:text-4xl text-[#1A0B5B] josefin-bold text-center">
+          <h2 className="josefin-bold text-center text-3xl text-[#1A0B5B] md:text-4xl">
             {title}
           </h2>
         )}

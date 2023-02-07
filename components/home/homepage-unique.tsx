@@ -1,7 +1,9 @@
 import Image from "next/image";
 
-import smartwatch from "@/public/assets/images/smartwatch.png";
 import { PrimaryButton } from "@/components/ui/button/primary-button";
+
+import smartwatch from "@/public/assets/images/smartwatch.png";
+
 import { HomepageSection } from "./homepage-section";
 
 export function HomePageUnique() {
@@ -12,39 +14,39 @@ export function HomePageUnique() {
           <Image src={smartwatch} alt="phone promo" quality={90} />
         </figure>
         <div className="max-w-[507px]">
-          <h2 className="text-3xl md:text-4xl text-navy-blue josefin-bold">
+          <h2 className="josefin-bold text-3xl text-navy-blue md:text-4xl">
             Unique Features Of leatest & Trending Products
           </h2>
-          <ul className="flex flex-col gap-y-3 mt-7">
+          <ul className="mt-7 flex flex-col gap-y-3">
             <li className="flex items-center space-x-3">
-              <div className="w-3 h-3 rounded-full bg-[#F52B70] shrink-0"></div>
-              <p className="text-base text-[#ACABC3] lato-regular">
+              <div className="h-3 w-3 shrink-0 rounded-full bg-[#F52B70]"></div>
+              <p className="lato-regular text-base text-[#ACABC3]">
                 Touchscreen display
               </p>
             </li>
             <li className="flex items-center space-x-3">
-              <div className="w-3 h-3 rounded-full bg-[#2B2BF5] shrink-0"></div>
-              <p className="text-base text-[#ACABC3] lato-regular max-w-[461px]">
+              <div className="h-3 w-3 shrink-0 rounded-full bg-[#2B2BF5]"></div>
+              <p className="lato-regular max-w-[461px] text-base text-[#ACABC3]">
                 Water-resistant design
               </p>
             </li>
             <li className="flex items-center space-x-3">
-              <div className="w-3 h-3 rounded-full bg-[#2BF5CC] shrink-0"></div>
-              <p className="text-base text-[#ACABC3] lato-regular">
+              <div className="h-3 w-3 shrink-0 rounded-full bg-[#2BF5CC]"></div>
+              <p className="lato-regular text-base text-[#ACABC3]">
                 Built-in GPS
               </p>
             </li>
           </ul>
-          <div className="flex items-center space-x-5 mt-9">
+          <div className="mt-9 flex items-center space-x-5">
             <PrimaryButton
               type="button"
-              className="py-[14px] px-6 josefin-semibold"
+              className="josefin-semibold py-[14px] px-6"
             >
               Add To Cart
             </PrimaryButton>
-            <h4 className="text-sm text-navy-blue josefin-semibold">
+            <h4 className="josefin-semibold text-sm text-navy-blue">
               Smartwatch <br />
-              <span className="text-navy-blue lato-regular">$32.00</span>
+              <span className="lato-regular text-navy-blue">$32.00</span>
             </h4>
           </div>
         </div>

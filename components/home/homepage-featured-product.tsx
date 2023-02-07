@@ -8,18 +8,18 @@ type Props<T> = {
 };
 
 export function HomePageFeaturedProduct<
-  T extends { id: number; image: string; title: string; price: number }
+  T extends { id: number; image: string; title: string; price: number },
 >({ featuredProducts }: Props<T>) {
   return (
     <HomepageSection className="mt-32" title="Featured Products">
-      <div className="flex flex-wrap gap-x-7 gap-y-8 justify-center mt-12">
+      <div className="mt-12 flex flex-wrap justify-center gap-x-7 gap-y-8">
         {featuredProducts?.map((product) => {
           return (
             <div
               key={product.id}
               className="relative bg-[#F6F7FB] drop-shadow-xl"
             >
-              <figure className="relative w-[270px] h-[237px] bg-white">
+              <figure className="relative h-[237px] w-[270px] bg-white">
                 <Image
                   src={product.image}
                   alt={product.title}
@@ -30,16 +30,16 @@ export function HomePageFeaturedProduct<
                   }}
                 />
               </figure>
-              <div className="mt-4 text-center w-[270px] py-4 px-4">
+              <div className="mt-4 w-[270px] py-4 px-4 text-center">
                 <header>
                   <h3
-                    className="text-pink-primary text-lg lato-bold"
+                    className="lato-bold text-lg text-pink-primary"
                     title={product.title}
                   >
                     {product.title}
                   </h3>
                 </header>
-                <h5 className="text-navy-blue text-sm lato-regular mt-3">
+                <h5 className="lato-regular mt-3 text-sm text-navy-blue">
                   ${product.price}
                 </h5>
               </div>

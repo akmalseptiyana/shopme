@@ -37,7 +37,7 @@ const cartSlice = createSlice({
 
       // check if item is already available
       const existingItem = state.itemsList.find(
-        (item) => item.id === newItem.id
+        (item) => item.id === newItem.id,
       );
 
       if (existingItem) {

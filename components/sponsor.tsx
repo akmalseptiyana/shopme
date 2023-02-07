@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import acer from "@/public/assets/icons/logo-acer-1.svg";
 import apple from "@/public/assets/icons/apple.svg";
+import acer from "@/public/assets/icons/logo-acer-1.svg";
 import samsung from "@/public/assets/icons/samsung.svg";
 import sandisk from "@/public/assets/icons/sandisk-logo-2007.svg";
 import westernDigital from "@/public/assets/icons/western-digital-2.svg";
@@ -14,7 +14,7 @@ export function Sponsor({ className }: SponsorProps) {
   return (
     <section className={className}>
       <div className="container">
-        <div className="flex flex-col md:flex-row gap-y-20 items-center justify-around max-w-[904px] mx-auto">
+        <div className="mx-auto flex max-w-[904px] flex-col items-center justify-around gap-y-20 md:flex-row">
           <figure>
             <Image
               src={acer}

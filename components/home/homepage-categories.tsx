@@ -8,18 +8,18 @@ type Props<T> = {
 };
 
 export function HomePageCategories<
-  T extends { id: number; image: string; title: string; price: number }
+  T extends { id: number; image: string; title: string; price: number },
 >({ topCategories }: Props<T>) {
   return (
     <HomepageSection title="Top Categories" className="mt-24">
-      <div className="flex flex-wrap justify-center gap-10 mt-14">
+      <div className="mt-14 flex flex-wrap justify-center gap-10">
         {topCategories?.slice(2).map((product) => {
           return (
             <div
               key={product.id}
               className="relative flex flex-col items-center"
             >
-              <figure className="relative w-[269px] h-[269px]">
+              <figure className="relative h-[269px] w-[269px]">
                 <Image
                   src={product.image}
                   alt={product.title}
@@ -30,13 +30,13 @@ export function HomePageCategories<
               </figure>
               <div className="w-[270px]">
                 <h3
-                  className="text-xl text-navy-blue text-center josefin-regular mt-6"
+                  className="josefin-regular mt-6 text-center text-xl text-navy-blue"
                   title={product.title}
                 >
                   {product.title}
                 </h3>
               </div>
-              <h4 className="text-base text-navy-blue josefin-regular mt-3">
+              <h4 className="josefin-regular mt-3 text-base text-navy-blue">
                 ${product.price}
               </h4>
 

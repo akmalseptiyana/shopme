@@ -14,10 +14,10 @@ type BreadcrumbProps = {
 export function Breadcrumb({ items }: BreadcrumbProps) {
   return (
     <nav aria-label="Breadcrumb" className="mt-24">
-      <h2 className="text-4xl text-[#101750] josefin-bold">
+      <h2 className="josefin-bold text-4xl text-[#101750]">
         {items?.map((item) => (item.current ? item.name : null))}
       </h2>
-      <ol className="flex items-center breadcrumb">
+      <ol className="breadcrumb flex items-center">
         {items?.map(({ name, href, current }) => {
           return (
             <li key={name}>

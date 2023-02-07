@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
 import clsx from "clsx";
+import { ReactNode } from "react";
 
 type InternalPageContentProps = {
   children: ReactNode;
@@ -11,6 +11,6 @@ export function InternalPageContent({
   className,
 }: InternalPageContentProps) {
   return (
-    <div className={clsx("flex flex-col flex-1", className)}>{children}</div>
+    <div className={clsx("flex flex-1 flex-col", className)}>{children}</div>
   );
 }

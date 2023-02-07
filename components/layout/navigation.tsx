@@ -1,15 +1,16 @@
+import {
+  Bars3Icon,
+  MagnifyingGlassIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import clsx from "clsx";
-import {
-  MagnifyingGlassIcon,
-  Bars3Icon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+
+import { Container } from "@/components/ui/container";
 
 import { links } from "@/constans/navigation-data";
-import { Container } from "@/components/ui/container";
 
 type NavigationLinksProps = {
   isMobileOpen?: boolean;
@@ -20,20 +21,20 @@ function NavigationLinks({ isMobileOpen }: NavigationLinksProps) {
 
   if (isMobileOpen) {
     return (
-      <ul className="flex flex-col gap-y-5 mt-16">
+      <ul className="mt-16 flex flex-col gap-y-5">
         {links.map((link, index) => (
           <li key={index} className="px-4">
             <Link
               href={link.href}
               className={clsx(
-                "flex items-center gap-x-1 text-base lato-regular",
+                "lato-regular flex items-center gap-x-1 text-base",
                 router.pathname === link.href
                   ? "text-pink-primary"
-                  : "text-[#0D0E43]"
+                  : "text-[#0D0E43]",
               )}
             >
               {link.name}
-              {link.icon && <link.icon className="w-3 h-3 text-[#0D0E43]" />}
+              {link.icon && <link.icon className="h-3 w-3 text-[#0D0E43]" />}
             </Link>
           </li>
         ))}
@@ -42,20 +43,20 @@ function NavigationLinks({ isMobileOpen }: NavigationLinksProps) {
   }
 
   return (
-    <ul className="hidden lg:flex items-center gap-x-9">
+    <ul className="hidden items-center gap-x-9 lg:flex">
       {links.map((link, index) => (
         <li key={index}>
           <Link
             href={link.href}
             className={clsx(
-              "flex items-center gap-x-1 text-base lato-regular",
+              "lato-regular flex items-center gap-x-1 text-base",
               router.pathname === link.href
                 ? "text-pink-primary"
-                : "text-[#0D0E43]"
+                : "text-[#0D0E43]",
             )}
           >
             {link.name}
-            {link.icon && <link.icon className="w-3 h-3 text-[#0D0E43]" />}
+            {link.icon && <link.icon className="h-3 w-3 text-[#0D0E43]" />}
           </Link>
         </li>
       ))}
@@ -68,16 +69,16 @@ export function Navigation() {
   const [isSearchOpen, setSearchOpen] = useState<boolean>(false);
 
   return (
-    <nav className="h-10 flex items-center my-5">
+    <nav className="my-5 flex h-10 items-center">
       <Container className="flex items-center">
         <div className="flex flex-1 items-center gap-x-4 xl:gap-x-20">
-          <Link href="/" className="text-3xl text-[#0D0E43] josefin-bold">
+          <Link href="/" className="josefin-bold text-3xl text-[#0D0E43]">
             Shopme
           </Link>
           <NavigationLinks />
         </div>
 
-        <form className="hidden md:block mr-4 lg:mr-0">
+        <form className="mr-4 hidden md:block lg:mr-0">
           <label htmlFor="search-field" className="sr-only">
             Search...
           </label>
@@ -85,10 +86,10 @@ export function Navigation() {
             <input
               type="text"
               id="search-field"
-              className="h-10 w-[266px] border-2 border-r-0 border-[#E7E6EF outline-none"
+              className="border-[#E7E6EF h-10 w-[266px] border-2 border-r-0 outline-none"
             />
             <button type="submit" className="bg-pink-primary py-2 px-3">
-              <MagnifyingGlassIcon className="w-6 h-6 text-white" />
+              <MagnifyingGlassIcon className="h-6 w-6 text-white" />
             </button>
           </div>
         </form>
@@ -98,10 +99,10 @@ export function Navigation() {
             className="md:hidden"
             onClick={() => setSearchOpen(!isSearchOpen)}
           >
-            <MagnifyingGlassIcon className="w-6 h-6 text-[#0D0E43]" />
+            <MagnifyingGlassIcon className="h-6 w-6 text-[#0D0E43]" />
           </button>
           <button className="lg:hidden" onClick={() => setMobileOpen(true)}>
-            <Bars3Icon className="w-6 h-6 text-[#0D0E43]" />
+            <Bars3Icon className="h-6 w-6 text-[#0D0E43]" />
           </button>
         </div>
       </Container>
@@ -109,20 +110,20 @@ export function Navigation() {
       {/* mobile */}
       <div
         className={clsx(
-          "w-[280px] h-screen bg-[#F6F5FF] fixed top-0 transition-all ease-in-out duration-300 z-50 lg:hidden",
-          isMobileOpen ? "right-0" : "-right-full"
+          "fixed top-0 z-50 h-screen w-[280px] bg-[#F6F5FF] transition-all duration-300 ease-in-out lg:hidden",
+          isMobileOpen ? "right-0" : "-right-full",
         )}
       >
         <button onClick={() => setMobileOpen(false)}>
-          <XMarkIcon className="w-6 h-6 text-[#0D0E43] absolute top-5 right-5" />
+          <XMarkIcon className="absolute top-5 right-5 h-6 w-6 text-[#0D0E43]" />
         </button>
         <NavigationLinks isMobileOpen={isMobileOpen} />
       </div>
 
       <form
         className={clsx(
-          "fixed left-0 right-0 transition-all ease-in-out duration-200 z-20 md:hidden",
-          isSearchOpen ? "top-0" : "-top-full"
+          "fixed left-0 right-0 z-20 transition-all duration-200 ease-in-out md:hidden",
+          isSearchOpen ? "top-0" : "-top-full",
         )}
       >
         <label htmlFor="search-field-mobile" className="sr-only">
@@ -132,10 +133,10 @@ export function Navigation() {
           <input
             type="text"
             id="search-field-mobile"
-            className="h-10 w-full border-2 border-r-0 border-[#E7E6EF outline-none"
+            className="border-[#E7E6EF h-10 w-full border-2 border-r-0 outline-none"
           />
           <button type="submit" className="bg-pink-primary py-2 px-3">
-            <MagnifyingGlassIcon className="w-6 h-6 text-white" />
+            <MagnifyingGlassIcon className="h-6 w-6 text-white" />
           </button>
         </div>
       </form>

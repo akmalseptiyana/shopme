@@ -2,25 +2,27 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 
-import { dataLeft, dataRight } from "@/constans/header-data";
 import { Container } from "@/components/ui/container";
+
 import { RootState } from "@/store/store";
+
+import { dataLeft, dataRight } from "@/constans/header-data";
 
 export function GlobalHeader() {
   const cartItems = useSelector((state: RootState) => state.cart.itemsList);
   const totalQuantity = useSelector(
-    (state: RootState) => state.cart.totalQuantity
+    (state: RootState) => state.cart.totalQuantity,
   );
 
   return (
     <header className="bg-purple-primary py-[14px]">
-      <Container className="flex flex-wrap items-center justify-center md:justify-between gap-y-4">
+      <Container className="flex flex-wrap items-center justify-center gap-y-4 md:justify-between">
         <div className="flex items-center gap-x-12">
           {dataLeft.map((data, index) => {
             return (
               <div key={index} className="flex items-center gap-x-3">
-                <data.icon className="w-4 h-4 text-white" />
-                <p className="text-base text-[#F1F1F1] josefin-semibold">
+                <data.icon className="h-4 w-4 text-white" />
+                <p className="josefin-semibold text-base text-[#F1F1F1]">
                   {data.text}
                 </p>
               </div>
@@ -35,10 +37,10 @@ export function GlobalHeader() {
                   <li key={index} className="flex items-center gap-x-1">
                     <Link
                       href={data.href}
-                      className="flex items-center gap-x-1 text-base text-[#F1F1F1] josefin-semibold"
+                      className="josefin-semibold flex items-center gap-x-1 text-base text-[#F1F1F1]"
                     >
                       {data.text}
-                      <data.icon className="w-4 h-4 text-white" />
+                      <data.icon className="h-4 w-4 text-white" />
                     </Link>
                   </li>
                 );
@@ -46,10 +48,10 @@ export function GlobalHeader() {
 
               return (
                 <li key={index} className="flex items-center gap-x-1">
-                  <p className="text-base text-[#F1F1F1] josefin-semibold">
+                  <p className="josefin-semibold text-base text-[#F1F1F1]">
                     {data.text}
                   </p>
-                  <data.icon className="w-4 h-4 text-white" />
+                  <data.icon className="h-4 w-4 text-white" />
                 </li>
               );
             })}
@@ -62,7 +64,7 @@ export function GlobalHeader() {
               viewBox="0 0 30 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-[30px] h-6"
+              className="h-6 w-[30px]"
             >
               <path
                 strokeLinecap="round"
@@ -72,7 +74,7 @@ export function GlobalHeader() {
               <g
                 className={clsx(
                   "text-pink-primary",
-                  cartItems.length > 0 ? "block" : "hidden"
+                  cartItems.length > 0 ? "block" : "hidden",
                 )}
               >
                 <circle cx="22" cy="8" r="7" fill="#FB2E86" />
@@ -80,7 +82,7 @@ export function GlobalHeader() {
                   x={totalQuantity < 10 ? "62%" : "52%"}
                   y="50%"
                   strokeWidth="1px"
-                  className="text-white text-[10px] font-lato"
+                  className="font-lato text-[10px] text-white"
                 >
                   {totalQuantity}
                 </text>

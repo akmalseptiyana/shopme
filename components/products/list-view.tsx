@@ -1,28 +1,28 @@
-import Image from "next/image";
-import { useDispatch } from "react-redux";
 import {
-  ShoppingCartIcon,
   HeartIcon,
   MagnifyingGlassPlusIcon,
+  ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
+import Image from "next/image";
+import { useDispatch } from "react-redux";
+
+import { Rating } from "@/components/ui/rating";
 
 import { addToCart } from "@/store/slices/cartSlice";
-import { Rating } from "@/components/ui/rating";
-import { ProductProps } from "./utils/type";
 import { AppDispatch } from "@/store/store";
 
 export function ListView() {
   const dispatch = useDispatch<AppDispatch>();
 
   return (
-    <div className="flex flex-col gap-y-8 mt-24">
+    <div className="mt-24 flex flex-col gap-y-8">
       {products?.map((product) => {
         return (
           <div
             key={product.id}
-            className="flex flex-wrap items-center gap-x-8 gap-y-7 max-w-[1141px] py-4 px-5 bg-white shadow"
+            className="flex max-w-[1141px] flex-wrap items-center gap-x-8 gap-y-7 bg-white py-4 px-5 shadow"
           >
-            <figure className="relative w-[313px] h-[217px] bg-white">
+            <figure className="relative h-[217px] w-[313px] bg-white">
               <Image
                 src={product.image}
                 alt={product.title}
@@ -32,11 +32,11 @@ export function ListView() {
               />
             </figure>
             <div>
-              <h3 className="text-xl text-off-blue josefin-bold max-w-[550px]">
+              <h3 className="josefin-bold max-w-[550px] text-xl text-off-blue">
                 {product.title}
               </h3>
               <div className="flex items-baseline gap-x-4">
-                <h4 className="text-lg text-off-blue josefin-regular mt-3">
+                <h4 className="josefin-regular mt-3 text-lg text-off-blue">
                   ${product.price}
                 </h4>
                 <Rating
@@ -47,26 +47,26 @@ export function ListView() {
                   className="top-1"
                 />
               </div>
-              <p className="text-lg text-[#9295AA] lato-regular mt-2 max-w-[591px]">
+              <p className="lato-regular mt-2 max-w-[591px] text-lg text-[#9295AA]">
                 {product.description}
               </p>
-              <ul className="flex items-center gap-x-5 mt-8">
+              <ul className="mt-8 flex items-center gap-x-5">
                 <li>
                   <button
-                    className="w-8 h-8 rounded-full flex items-center justify-center shadow"
+                    className="flex h-8 w-8 items-center justify-center rounded-full shadow"
                     onClick={() => dispatch(addToCart(product))}
                   >
-                    <ShoppingCartIcon className="w-5 h-5 text-[#535399]" />
+                    <ShoppingCartIcon className="h-5 w-5 text-[#535399]" />
                   </button>
                 </li>
                 <li>
-                  <button className="w-8 h-8 rounded-full flex items-center justify-center shadow">
-                    <HeartIcon className="w-5 h-5 text-[#535399]" />
+                  <button className="flex h-8 w-8 items-center justify-center rounded-full shadow">
+                    <HeartIcon className="h-5 w-5 text-[#535399]" />
                   </button>
                 </li>
                 <li>
-                  <button className="w-8 h-8 rounded-full flex items-center justify-center shadow">
-                    <MagnifyingGlassPlusIcon className="w-5 h-5 text-[#535399]" />
+                  <button className="flex h-8 w-8 items-center justify-center rounded-full shadow">
+                    <MagnifyingGlassPlusIcon className="h-5 w-5 text-[#535399]" />
                   </button>
                 </li>
               </ul>

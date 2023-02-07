@@ -1,5 +1,5 @@
-import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
+import Head from "next/head";
 
 import { BlogAside } from "@/components/blog/blog-aside";
 import { Single } from "@/components/blog/single";
@@ -29,7 +29,7 @@ export default function SingleBlog({
       />
       <InternalPageContent>
         <Container>
-          <InternalPageSection className="flex flex-wrap gap-x-8 gap-y-20 mt-28">
+          <InternalPageSection className="mt-28 flex flex-wrap gap-x-8 gap-y-20">
             <Single data={data} />
             <BlogAside data={{ recentPost, saleProduct }} />
           </InternalPageSection>
@@ -43,15 +43,15 @@ export default function SingleBlog({
 
 export async function getStaticProps() {
   const res = await fetch(
-    `${process.env.BLOG_URL}/everything?apiKey=${process.env.API_KEY}&q=apple&language=en&pageSize=1`
+    `${process.env.BLOG_URL}/everything?apiKey=${process.env.API_KEY}&q=apple&language=en&pageSize=1`,
   );
 
   const resRecentPost = await fetch(
-    `${process.env.BLOG_URL}/everything?apiKey=${process.env.API_KEY}&q=nvidia&language=en&pageSize=4`
+    `${process.env.BLOG_URL}/everything?apiKey=${process.env.API_KEY}&q=nvidia&language=en&pageSize=4`,
   );
 
   const resSaleProduct = await fetch(
-    `${process.env.BLOG_URL}/everything?apiKey=${process.env.API_KEY}&q=sale product&language=en&pageSize=3`
+    `${process.env.BLOG_URL}/everything?apiKey=${process.env.API_KEY}&q=sale product&language=en&pageSize=3`,
   );
 
   const data = await res.json();

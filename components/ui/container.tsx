@@ -1,5 +1,5 @@
-import { ComponentProps, forwardRef } from "react";
 import clsx from "clsx";
+import { ComponentProps, forwardRef } from "react";
 
 type ContainerProps = ComponentProps<"div">;
 
@@ -10,7 +10,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(
         {children}
       </div>
     );
-  }
+  },
 );
 
 Container.displayName = "Container";

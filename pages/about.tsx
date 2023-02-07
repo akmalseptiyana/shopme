@@ -1,13 +1,13 @@
 import Head from "next/head";
 
-import { Page } from "@/components/layout/page/page";
-import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
-import { InternalPageContent } from "@/components/layout/page/internal-page-content";
-import { InternalPageSection } from "@/components/layout/page/internal-page-section";
-import { Container } from "@/components/ui/container";
 import { AboutStart } from "@/components/about/about-start";
-import { Features } from "@/components/features";
 import { OurClient } from "@/components/about/our-client";
+import { Features } from "@/components/features";
+import { InternalPageContent } from "@/components/layout/page/internal-page-content";
+import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
+import { InternalPageSection } from "@/components/layout/page/internal-page-section";
+import { Page } from "@/components/layout/page/page";
+import { Container } from "@/components/ui/container";
 
 export default function About() {
   return (
@@ -27,7 +27,7 @@ export default function About() {
             <AboutStart />
           </InternalPageSection>
           <InternalPageSection className="mt-36">
-            <h3 className="text-3xl md:text-4xl text-black josefin-bold text-center">
+            <h3 className="josefin-bold text-center text-3xl text-black md:text-4xl">
               Our Features
             </h3>
             <Features />

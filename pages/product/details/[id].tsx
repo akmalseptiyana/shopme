@@ -1,15 +1,15 @@
-import Head from "next/head";
 import fetch from "cross-fetch";
-import { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import Head from "next/head";
 
-import { Page } from "@/components/layout/page/page";
-import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
-import { InternalPageContent } from "@/components/layout/page/internal-page-content";
-import { InternalPageSection } from "@/components/layout/page/internal-page-section";
-import { Container } from "@/components/ui/container";
-import { Sponsor } from "@/components/sponsor";
 import { CardProductDetails } from "@/components/details/card-product-details";
 import { RelatedProducts } from "@/components/details/related-products";
+import { InternalPageContent } from "@/components/layout/page/internal-page-content";
+import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
+import { InternalPageSection } from "@/components/layout/page/internal-page-section";
+import { Page } from "@/components/layout/page/page";
+import { Sponsor } from "@/components/sponsor";
+import { Container } from "@/components/ui/container";
 
 export default function ProductDetails({
   data,
