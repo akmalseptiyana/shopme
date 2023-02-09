@@ -1,5 +1,6 @@
 import { HeartIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 
 import { PrimaryButton } from "@/components/ui/button/primary-button";
@@ -9,10 +10,20 @@ import { SocialIcons } from "@/components/ui/social-icons";
 import { addToCart } from "@/store/slices/cartSlice";
 import { AppDispatch } from "@/store/store";
 
-import { Props } from "./utils/type";
+import { useGetProductDetailsQuery } from "@/store/services/fakeStore";
 
-export function CardProductDetails({ data }: Props) {
+export function CardProductDetails() {
+  const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
+
+  const id = router.query.id;
+  const result = useGetProductDetailsQuery(id, { skip: router.isFallback });
+
+  const { data, isLoading } = result;
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="flex max-w-[1170px] flex-wrap items-center gap-x-10 gap-y-8 rounded-sm bg-white py-8 px-4 shadow lg:py-3">

@@ -1,21 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
+import { useGetProductsLimitQuery } from "@/store/services/fakeStore";
 
 import { discount } from "@/constans/discount";
 
-import { HomepageSection } from "./homepage-section";
+import { HomepageSection } from "@/components/home/homepage-section";
+import { ProductItem } from "@/components/home/utils/type";
 
-type Props<T> = {
-  latestProducts: T[];
-};
+export function HomePageLatestProduct() {
+  const router = useRouter();
+  const result = useGetProductsLimitQuery("6", { skip: router.isFallback });
 
-export function HomePageLatestProduct<
-  T extends { id: number; image: string; title: string; price: number },
->({ latestProducts }: Props<T>) {
+  const { data } = result;
+
   return (
     <HomepageSection className="mt-20" title="Latest Products">
       <div className="mt-14 flex flex-wrap justify-center gap-x-9 gap-y-32">
-        {latestProducts?.map((product, index) => {
+        {data?.map((product: ProductItem, index: number) => {
           return (
             <div key={product.id} className="relative max-w-[360px]">
               <figure className="relative h-[269px] w-[360px] bg-white">

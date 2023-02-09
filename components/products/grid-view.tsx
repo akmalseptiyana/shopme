@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useGetProductsQuery } from "@/store/services/fakeStore";
 
 import { ProductItem } from "./utils/type";
+import { ProductSkeleton } from "../ui/skeleton-loading";
 
 export function GridView() {
   const router = useRouter();
@@ -12,7 +13,17 @@ export function GridView() {
   const { data, isLoading } = result;
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return (
+      <ul className="mt-36 grid grid-cols-1 items-center justify-items-center gap-x-14 gap-y-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {Array<number>(20)
+          .fill(0)
+          .map((item, index) => (
+            <li key={index}>
+              <ProductSkeleton />
+            </li>
+          ))}
+      </ul>
+    );
   }
 
   return (

@@ -4,7 +4,7 @@ import { createWrapper } from "next-redux-wrapper";
 import { fakeStoreApi } from "@/store/services/fakeStore";
 import cartReducer from "@/store/slices/cartSlice";
 
-const store = () =>
+export const store = () =>
   configureStore({
     reducer: {
       [fakeStoreApi.reducerPath]: fakeStoreApi.reducer,

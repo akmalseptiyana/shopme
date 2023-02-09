@@ -1,6 +1,6 @@
 import { PrimaryButton } from "@/components/ui/button/primary-button";
 
-import { HomepageSection } from "./homepage-section";
+import { HomepageSection } from "@/components/home/homepage-section";
 
 export function HomePageNewslater() {
   return (

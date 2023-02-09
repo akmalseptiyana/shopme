@@ -1,6 +1,6 @@
 import { Features } from "@/components/features";
 
-import { HomepageSection } from "./homepage-section";
+import { HomepageSection } from "@/components/home/homepage-section";
 
 export function HomePageOffer() {
   return (

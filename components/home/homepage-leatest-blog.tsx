@@ -6,7 +6,7 @@ import imageBlog1 from "@/public/assets/images/blog-1.jpg";
 import imageBlog2 from "@/public/assets/images/blog-2.jpg";
 import imageBlog3 from "@/public/assets/images/blog-3.jpg";
 
-import { HomepageSection } from "./homepage-section";
+import { HomepageSection } from "@/components/home/homepage-section";
 
 export function HomePageLeatestBlog() {
   return (

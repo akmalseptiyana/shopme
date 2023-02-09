@@ -45,4 +45,4 @@ function MyApp({ Component, pageProps, router, ...rest }: AppProps) {
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);

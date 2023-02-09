@@ -1,32 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
+import { useGetProductsQuery } from "@/store/services/fakeStore";
 
 import { trendingProductDiscount } from "@/constans/discount";
 import botle from "@/public/assets/images/botle.png";
 import controller from "@/public/assets/images/controller.png";
 
-import { HomepageSection } from "./homepage-section";
+import { HomepageSection } from "@/components/home/homepage-section";
+import { ProductItem } from "@/components/home/utils/type";
 
-type Props<T> = {
-  trendingProducts: T[];
-};
+export function HomePageTrendingProducts() {
+  const router = useRouter();
+  const result = useGetProductsQuery({ skip: router.isFallback });
+  const { data } = result;
 
-export function HomePageTrendingProducts<
-  T extends {
-    id: number;
-    image: string;
-    title: string;
-    price: number;
-    rating: { rate: number };
-  },
->({ trendingProducts }: Props<T>) {
   return (
     <HomepageSection title="Trending Products" className="mt-32">
       <div className="mt-10 flex flex-wrap justify-center gap-x-7 gap-y-10">
-        {trendingProducts
-          ?.filter((product) => product.rating.rate > 4.5)
+        {data
+          ?.filter((product: ProductItem) => product.rating.rate > 4.5)
           .slice(1, 5)
-          ?.map((product, index) => {
+          ?.map((product: ProductItem, index: number) => {
             return (
               <div
                 key={product.id}
@@ -99,7 +95,7 @@ export function HomePageTrendingProducts<
           </figure>
         </div>
         <div className="flex flex-col space-y-5">
-          {trendingProducts?.slice(7, 10).map((product) => {
+          {data?.slice(7, 10).map((product: ProductItem) => {
             return (
               <div key={product.id} className="flex items-center gap-x-2">
                 <figure className="relative h-[74px] w-[107px]">

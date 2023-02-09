@@ -11,13 +11,30 @@ export const fakeStoreApi: any = createApi({
   },
   endpoints: (builder) => ({
     getProducts: builder.query({ query: () => "/products" }),
+    getProductsLimit: builder.query({
+      query: (limit) => `/products?limit=${limit}`,
+    }),
+    getProductsByCategory: builder.query({
+      query: (category) => `/products/category/${category}`,
+    }),
+    getProductDetails: builder.query({
+      query: (id) => `/products/${id}`,
+    }),
   }),
 });
 
 export const {
   useGetProductsQuery,
+  useGetProductsLimitQuery,
+  useGetProductsByCategoryQuery,
+  useGetProductDetailsQuery,
   util: { getRunningQueriesThunk },
 } = fakeStoreApi;
 
 // export endpoints for use in SSR/SSG
-export const { getProducts } = fakeStoreApi.endpoints;
+export const {
+  getProducts,
+  getProductsLimit,
+  getProductsByCategory,
+  getProductDetails,
+} = fakeStoreApi.endpoints;

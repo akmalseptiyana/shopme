@@ -42,11 +42,13 @@ export default function Products() {
   );
 }
 
-export const getStaticProps = wrapper.getStaticProps((store) => async () => {
-  store.dispatch(getProducts.initiate());
-  await Promise.all(store.dispatch(getRunningQueriesThunk()));
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) => async () => {
+    store.dispatch(getProducts.initiate());
+    await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
-  return {
-    props: {},
-  };
-});
+    return {
+      props: {},
+    };
+  },
+);

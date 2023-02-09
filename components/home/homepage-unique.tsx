@@ -4,7 +4,7 @@ import { PrimaryButton } from "@/components/ui/button/primary-button";
 
 import smartwatch from "@/public/assets/images/smartwatch.png";
 
-import { HomepageSection } from "./homepage-section";
+import { HomepageSection } from "@/components/home/homepage-section";
 
 export function HomePageUnique() {
   return (

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import backpack from "@/public/assets/images/backpack.png";
 
-import { HomepageSection } from "./homepage-section";
+import { HomepageSection } from "@/components/home/homepage-section";
 
 export function HomePageDiscount() {
   return (

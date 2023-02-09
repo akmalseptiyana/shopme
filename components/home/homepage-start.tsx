@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import phonePromo from "@/public/assets/images/phone-promotional.png";
 
-import { HomepageSection } from "./homepage-section";
+import { HomepageSection } from "@/components/home/homepage-section";
 
 export function HomePageStart() {
   return (

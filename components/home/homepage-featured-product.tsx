@@ -1,19 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-import { HomepageSection } from "./homepage-section";
+import { useGetProductsLimitQuery } from "@/store/services/fakeStore";
 
-type Props<T> = {
-  featuredProducts: T[];
-};
+import { HomepageSection } from "@/components/home/homepage-section";
+import { ProductItem } from "@/components/home/utils/type";
 
-export function HomePageFeaturedProduct<
-  T extends { id: number; image: string; title: string; price: number },
->({ featuredProducts }: Props<T>) {
+export function HomePageFeaturedProduct() {
+  const router = useRouter();
+  const result = useGetProductsLimitQuery("4", { skip: router.isFallback });
+
+  const { data } = result;
   return (
     <HomepageSection className="mt-32" title="Featured Products">
       <div className="mt-12 flex flex-wrap justify-center gap-x-7 gap-y-8">
-        {featuredProducts?.map((product) => {
+        {data?.map((product: ProductItem) => {
           return (
             <div
               key={product.id}

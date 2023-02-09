@@ -1,5 +1,3 @@
-import fetch from "cross-fetch";
-import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 
 import { HomePageCategories } from "@/components/home/homepage-categories";
@@ -16,12 +14,15 @@ import { HomePageUnique } from "@/components/home/homepage-unique";
 import { Page } from "@/components/layout/page/page";
 import { Sponsor } from "@/components/sponsor";
 
-export default function Home({
-  featuredProducts,
-  latestProducts,
-  trendingProducts,
-  topCategories,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+import {
+  getProducts,
+  getProductsByCategory,
+  getProductsLimit,
+  getRunningQueriesThunk,
+} from "@/store/services/fakeStore";
+import { wrapper } from "@/store/store";
+
+export default function Home() {
   return (
     <Page>
       <Head>
@@ -29,13 +30,13 @@ export default function Home({
       </Head>
       <HomePageContent>
         <HomePageStart />
-        <HomePageFeaturedProduct featuredProducts={featuredProducts} />
-        <HomePageLatestProduct latestProducts={latestProducts} />
+        <HomePageFeaturedProduct />
+        <HomePageLatestProduct />
         <HomePageOffer />
         <HomePageUnique />
-        <HomePageTrendingProducts trendingProducts={trendingProducts} />
+        <HomePageTrendingProducts />
         <HomePageDiscount />
-        <HomePageCategories topCategories={topCategories} />
+        <HomePageCategories />
         <HomePageNewslater />
         <Sponsor className="mt-24" />
         <HomePageLeatestBlog />
@@ -44,31 +45,14 @@ export default function Home({
   );
 }
 
-export async function getStaticProps() {
-  const resFeaturedProducts = await fetch(
-    `${process.env.BASE_URL}/products?limit=4`,
-  );
-  const featuredProducts = await resFeaturedProducts.json();
+export const getStaticProps = wrapper.getStaticProps((store) => async () => {
+  store.dispatch(getProducts.initiate());
+  store.dispatch(getProductsLimit.initiate());
+  store.dispatch(getProductsByCategory.initiate());
 
-  const resLatestProducts = await fetch(
-    `${process.env.BASE_URL}/products?sort=desc&limit=6`,
-  );
-  const latestProducts = await resLatestProducts.json();
-
-  const resTrendingProducts = await fetch(`${process.env.BASE_URL}/products`);
-  const trendingProducts = await resTrendingProducts.json();
-
-  const resTopCategories = await fetch(
-    `${process.env.BASE_URL}/products/category/electronics`,
-  );
-  const topCategories = await resTopCategories.json();
+  await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
   return {
-    props: {
-      featuredProducts,
-      latestProducts,
-      trendingProducts,
-      topCategories,
-    },
+    props: {},
   };
-}
+});

@@ -1,5 +1,5 @@
 import fetch from "cross-fetch";
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 
 import { CardProductDetails } from "@/components/details/card-product-details";
@@ -10,10 +10,15 @@ import { InternalPageSection } from "@/components/layout/page/internal-page-sect
 import { Page } from "@/components/layout/page/page";
 import { Sponsor } from "@/components/sponsor";
 import { Container } from "@/components/ui/container";
+import { wrapper, store } from "@/store/store";
+import {
+  getProductDetails,
+  getProducts,
+  getRunningQueriesThunk,
+} from "@/store/services/fakeStore";
+import { ProductItem } from "@/components/products/utils/type";
 
-export default function ProductDetails({
-  data,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function ProductDetails() {
   return (
     <Page>
       <Head>
@@ -28,8 +33,8 @@ export default function ProductDetails({
       <InternalPageContent>
         <Container>
           <InternalPageSection className="mt-32">
-            <CardProductDetails data={data} />
-            <RelatedProducts data={data} />
+            <CardProductDetails />
+            {/* <RelatedProducts /> */}
           </InternalPageSection>
 
           <Sponsor className="mt-32" />
@@ -39,11 +44,27 @@ export default function ProductDetails({
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const id = context.params?.id as string;
+export async function getStaticPaths() {
+  const makeStore = store();
+  const result = await makeStore.dispatch(getProducts.initiate());
 
-  const res = await fetch(`${process.env.BASE_URL}/products/${id}`);
-  const data = await res.json();
+  return {
+    paths: result.data?.map(
+      (item: ProductItem) => `/product/details/${item.id}`,
+    ),
+    fallback: true,
+  };
+}
 
-  return { props: { data } };
-};
+export const getStaticProps = wrapper.getStaticProps(
+  (store) => async (context) => {
+    const id = context.params?.id as string;
+
+    store.dispatch(getProductDetails.initiate(id));
+    await Promise.all(store.dispatch(getRunningQueriesThunk()));
+
+    return {
+      props: {},
+    };
+  },
+);
