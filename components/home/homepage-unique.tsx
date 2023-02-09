@@ -1,10 +1,9 @@
 import Image from "next/image";
 
+import { HomepageSection } from "@/components/home/homepage-section";
 import { PrimaryButton } from "@/components/ui/button/primary-button";
 
 import smartwatch from "@/public/assets/images/smartwatch.png";
-
-import { HomepageSection } from "@/components/home/homepage-section";
 
 export function HomePageUnique() {
   return (

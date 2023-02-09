@@ -7,10 +7,9 @@ import { PrimaryButton } from "@/components/ui/button/primary-button";
 import { Rating } from "@/components/ui/rating";
 import { SocialIcons } from "@/components/ui/social-icons";
 
+import { useGetProductDetailsQuery } from "@/store/services/fakeStore";
 import { addToCart } from "@/store/slices/cartSlice";
 import { AppDispatch } from "@/store/store";
-
-import { useGetProductDetailsQuery } from "@/store/services/fakeStore";
 
 export function CardProductDetails() {
   const router = useRouter();

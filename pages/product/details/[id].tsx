@@ -1,22 +1,20 @@
-import fetch from "cross-fetch";
-import { GetStaticProps } from "next";
 import Head from "next/head";
 
 import { CardProductDetails } from "@/components/details/card-product-details";
-import { RelatedProducts } from "@/components/details/related-products";
 import { InternalPageContent } from "@/components/layout/page/internal-page-content";
 import { InternalPageHeader } from "@/components/layout/page/internal-page-header";
 import { InternalPageSection } from "@/components/layout/page/internal-page-section";
 import { Page } from "@/components/layout/page/page";
+import { ProductItem } from "@/components/products/utils/type";
 import { Sponsor } from "@/components/sponsor";
 import { Container } from "@/components/ui/container";
-import { wrapper, store } from "@/store/store";
+
 import {
   getProductDetails,
   getProducts,
   getRunningQueriesThunk,
 } from "@/store/services/fakeStore";
-import { ProductItem } from "@/components/products/utils/type";
+import { store, wrapper } from "@/store/store";
 
 export default function ProductDetails() {
   return (

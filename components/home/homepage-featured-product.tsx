@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import { useGetProductsLimitQuery } from "@/store/services/fakeStore";
-
 import { HomepageSection } from "@/components/home/homepage-section";
 import { ProductItem } from "@/components/home/utils/type";
+
+import { useGetProductsLimitQuery } from "@/store/services/fakeStore";
 
 export function HomePageFeaturedProduct() {
   const router = useRouter();

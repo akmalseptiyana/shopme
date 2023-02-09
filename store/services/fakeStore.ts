@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { HYDRATE } from "next-redux-wrapper";
 
-export const fakeStoreApi: any = createApi({
+export const fakeStoreApi = createApi({
   reducerPath: "fakeStoreApi",
   baseQuery: fetchBaseQuery({ baseUrl: process.env.BASE_URL }),
   extractRehydrationInfo(action, { reducerPath }) {

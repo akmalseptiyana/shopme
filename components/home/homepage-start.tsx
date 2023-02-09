@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import phonePromo from "@/public/assets/images/phone-promotional.png";
-
 import { HomepageSection } from "@/components/home/homepage-section";
+
+import phonePromo from "@/public/assets/images/phone-promotional.png";
 
 export function HomePageStart() {
   return (

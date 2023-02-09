@@ -2,9 +2,9 @@ import { CheckIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
-import backpack from "@/public/assets/images/backpack.png";
-
 import { HomepageSection } from "@/components/home/homepage-section";
+
+import backpack from "@/public/assets/images/backpack.png";
 
 export function HomePageDiscount() {
   return (

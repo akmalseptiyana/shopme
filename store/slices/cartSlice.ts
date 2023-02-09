@@ -109,16 +109,16 @@ const cartSlice = createSlice({
 
       state.itemsList = state.itemsList.filter((item) => item.id !== id);
     },
-    resetCart(state, action) {
+    resetCart(state) {
       state.itemsList = [];
       state.totalQuantity = 0;
       state.subTotals = 0;
       state.totals = 0;
     },
-    calculateTax(state, action) {
+    calculateTax(state) {
       state.totals = withTax(state.subTotals);
     },
-    resetTax(state, action) {
+    resetTax(state) {
       state.totals = state.subTotals;
     },
   },

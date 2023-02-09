@@ -2,14 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import { HomepageSection } from "@/components/home/homepage-section";
+import { ProductItem } from "@/components/home/utils/type";
+
 import { useGetProductsQuery } from "@/store/services/fakeStore";
 
 import { trendingProductDiscount } from "@/constans/discount";
 import botle from "@/public/assets/images/botle.png";
 import controller from "@/public/assets/images/controller.png";
-
-import { HomepageSection } from "@/components/home/homepage-section";
-import { ProductItem } from "@/components/home/utils/type";
 
 export function HomePageTrendingProducts() {
   const router = useRouter();
