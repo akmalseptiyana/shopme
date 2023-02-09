@@ -44,7 +44,7 @@ export default function ProductDetails() {
 
 export async function getStaticPaths() {
   const makeStore = store();
-  const result = await makeStore.dispatch(getProducts.initiate());
+  const result = await makeStore.dispatch(getProducts.initiate(""));
 
   return {
     paths: result.data?.map(

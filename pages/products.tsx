@@ -44,7 +44,7 @@ export default function Products() {
 
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async (context) => {
-    store.dispatch(getProducts.initiate("getProducts"));
+    store.dispatch(getProducts.initiate(""));
     await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
     return {
