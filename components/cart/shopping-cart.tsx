@@ -140,7 +140,7 @@ export function ShoppingCart() {
         <PrimaryButton
           type="button"
           className="josefin-semibold mt-12 py-3 px-7"
-          onClick={() => dispatch(resetCart("RESET_CART"))}
+          onClick={() => dispatch(resetCart())}
         >
           Clear Cart
         </PrimaryButton>

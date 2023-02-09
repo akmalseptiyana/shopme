@@ -21,10 +21,10 @@ export function CartTotals() {
     const isChecked = e.target.checked;
 
     if (isChecked && cartItems.length > 0) {
-      dispatch(calculateTax("CALCULATE_TAX"));
+      dispatch(calculateTax());
       setDisabled(false);
     } else {
-      dispatch(resetTax("RESET_TAX"));
+      dispatch(resetTax());
       setDisabled(true);
     }
   }
@@ -32,7 +32,7 @@ export function CartTotals() {
   function handleSubmit() {
     if (!disabled) {
       Router.push("/completed");
-      dispatch(resetCart("RESET_CART"));
+      dispatch(resetCart());
     }
   }
 
