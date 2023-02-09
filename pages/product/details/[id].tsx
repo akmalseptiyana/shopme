@@ -42,19 +42,7 @@ export default function ProductDetails() {
   );
 }
 
-export async function getStaticPaths() {
-  const makeStore = store();
-  const result = await makeStore.dispatch(getProducts.initiate(""));
-
-  return {
-    paths: result.data?.map(
-      (item: ProductItem) => `/product/details/${item.id}`,
-    ),
-    fallback: true,
-  };
-}
-
-export const getStaticProps = wrapper.getStaticProps(
+export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async (context) => {
     const id = context.params?.id as string;
 
