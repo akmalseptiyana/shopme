@@ -86,7 +86,7 @@ export function Navigation() {
             <input
               type="text"
               id="search-field"
-              className="border-[#E7E6EF h-10 w-[266px] border-2 border-r-0 outline-none"
+              className="border-[#E7E6EF h-10 w-[266px] border-2 border-r-0 px-2 outline-none"
             />
             <button type="submit" className="bg-pink-primary py-2 px-3">
               <MagnifyingGlassIcon className="h-6 w-6 text-white" />
