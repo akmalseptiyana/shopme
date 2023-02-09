@@ -46,9 +46,9 @@ export default function Home() {
 }
 
 export const getStaticProps = wrapper.getStaticProps((store) => async () => {
-  store.dispatch(getProducts.initiate());
-  store.dispatch(getProductsLimit.initiate());
-  store.dispatch(getProductsByCategory.initiate());
+  store.dispatch(getProducts.initiate("getProducts"));
+  store.dispatch(getProductsLimit.initiate("getProductsWithLimit"));
+  store.dispatch(getProductsByCategory.initiate("getProductsByCategory"));
 
   await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
